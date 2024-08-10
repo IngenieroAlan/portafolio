@@ -1,13 +1,63 @@
-import { useState } from 'react'
-import './App.css'
+import { Container } from "@mui/material";
+import { CustomAppBar } from "./components/CustomAppBar";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <div>
-    </div>
-  )
+    <Container>
+      <CustomAppBar />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <p></p>
+    </Container>
+  );
 }
 
-export default App
+export default App;
