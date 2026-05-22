@@ -13,10 +13,10 @@ import {
   Terminal,
 } from 'lucide-react'
 import type { ReactNode } from 'react'
+import { ParallaxStarfield } from '@/components/parallax-starfield'
 import { cn } from '@/lib/utils'
 
 const IMAGES = {
-  heroBg: '/images/portfolio/hero-bg.png',
   profile: '/images/portfolio/profile-avatar.png',
   hyperdrive: '/images/portfolio/hyperdrive-engine.png',
   holocron: '/images/portfolio/holocron-archive.png',
@@ -133,6 +133,44 @@ const accentStyles = {
   },
 } as const
 
+function HeroSection() {
+  return (
+    <section
+      id="hero"
+      className="relative flex min-h-[819px] flex-col items-center justify-center overflow-hidden px-4 py-24 sm:px-16"
+      aria-labelledby="hero-heading"
+      data-node-id="2:7"
+    >
+      <div className="hero-glass relative z-0 flex w-full max-w-2xl flex-col items-center gap-6 rounded-2xl px-6 py-10 text-center sm:px-12 sm:py-14">
+        <div className="relative size-56 rounded-full border border-white/10 bg-[#131313]/80 p-2 shadow-[0_0_20px_rgba(0,163,255,0.25)]">
+          <div className="relative size-full overflow-hidden rounded-full">
+            <img
+              src={IMAGES.profile}
+              alt="Profile portrait"
+              className="size-full object-cover"
+              width={224}
+              height={224}
+            />
+            <div
+              aria-hidden="true"
+              className="pointer-events-none absolute inset-0 rounded-full bg-white mix-blend-saturation"
+            />
+          </div>
+        </div>
+        <h1
+          id="hero-heading"
+          className="font-display text-4xl uppercase tracking-[0.2em] text-[#e5e2e1] sm:text-[64px] sm:leading-[1.1]"
+        >
+          FULL STACK DEVELOPER
+        </h1>
+        <p className="h-7 w-full max-w-[22rem] border-r-2 border-accent text-lg uppercase tracking-[0.18em] text-accent sm:max-w-none sm:whitespace-nowrap">
+          SPECIALIZED IN NEXT.JS, NODE.JS, REACT NATIVE
+        </p>
+      </div>
+    </section>
+  )
+}
+
 function SectionHeading({
   icon: Icon,
   id,
@@ -160,9 +198,10 @@ function SectionHeading({
 function App() {
   return (
     <div
-      className="relative min-h-svh w-full bg-canvas text-foreground"
+      className="relative min-h-svh w-full text-foreground"
       data-node-id="2:3"
     >
+      <ParallaxStarfield />
       <div
         aria-hidden="true"
         className="pointer-events-none fixed inset-0 -z-10 opacity-[0.05] bg-[radial-gradient(ellipse_80%_50%_at_50%_50%,hsl(0_0%_100%),transparent_70%)]"
@@ -228,43 +267,7 @@ function App() {
       </header>
 
       <main id="main-content" className="pt-20">
-        <section
-          id="hero"
-          className="relative flex min-h-[819px] flex-col items-center justify-center bg-top-left bg-no-repeat px-4 py-24 sm:px-16"
-          style={{
-            backgroundImage: `url('${IMAGES.heroBg}')`,
-            backgroundSize: '417px 417px',
-          }}
-          aria-labelledby="hero-heading"
-          data-node-id="2:7"
-        >
-          <div className="flex flex-col items-center gap-4 text-center">
-            <div className="relative size-56 rounded-full border border-border bg-[#131313] p-2 shadow-[0_0_20px_rgba(0,163,255,0.2)]">
-              <div className="relative size-full overflow-hidden rounded-full">
-                <img
-                  src={IMAGES.profile}
-                  alt="Profile portrait"
-                  className="size-full object-cover"
-                  width={224}
-                  height={224}
-                />
-                <div
-                  aria-hidden="true"
-                  className="pointer-events-none absolute inset-0 rounded-full bg-white mix-blend-saturation"
-                />
-              </div>
-            </div>
-            <h1
-              id="hero-heading"
-              className="font-display text-4xl uppercase tracking-[0.2em] text-[#e5e2e1] sm:text-[64px] sm:leading-[1.1]"
-            >
-              FULL STACK DEVELOPER
-            </h1>
-            <p className="h-7 w-full max-w-[22rem] border-r-2 border-accent text-lg uppercase tracking-[0.18em] text-accent sm:max-w-none sm:whitespace-nowrap">
-              SPECIALIZED IN NEXT.JS, NODE.JS, REACT NATIVE
-            </p>
-          </div>
-        </section>
+        <HeroSection />
 
         <section
           id="missions"
