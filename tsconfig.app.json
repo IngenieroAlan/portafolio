@@ -6,14 +6,10 @@
     "module": "esnext",
     "types": ["vite/client"],
     "skipLibCheck": true,
-    "ignoreDeprecations": "6.0",
 
-    /* Paths */
-    "baseUrl": ".",
+    /* Paths (relative to this config file; baseUrl removed — deprecated in TS 6) */
     "paths": {
-      "@/*": [
-        "./src/*"
-      ]
+      "@/*": ["./src/*"]
     },
 
     /* Bundler mode */
