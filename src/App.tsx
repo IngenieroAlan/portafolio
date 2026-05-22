@@ -1,3 +1,17 @@
+import type { LucideIcon } from 'lucide-react'
+import {
+  ArrowRight,
+  Atom,
+  Braces,
+  Clock,
+  Cloud,
+  Container,
+  Crosshair,
+  GitBranch,
+  Radio,
+  Settings,
+  Terminal,
+} from 'lucide-react'
 import type { ReactNode } from 'react'
 import { cn } from '@/lib/utils'
 
@@ -7,24 +21,13 @@ const IMAGES = {
   hyperdrive: '/images/portfolio/hyperdrive-engine.png',
   holocron: '/images/portfolio/holocron-archive.png',
   rebel: '/images/portfolio/rebel-data-stream.png',
-  iconMissions: '/images/portfolio/icon-missions.png',
-  iconArrow: '/images/portfolio/icon-arrow.png',
-  iconSystems: '/images/portfolio/icon-systems.png',
-  iconJs: '/images/portfolio/icon-js.png',
-  iconPython: '/images/portfolio/icon-python.png',
-  iconReact: '/images/portfolio/icon-react.png',
-  iconAws: '/images/portfolio/icon-aws.png',
-  iconDocker: '/images/portfolio/icon-docker.png',
-  iconGit: '/images/portfolio/icon-git.png',
-  iconExperience: '/images/portfolio/icon-experience.png',
-  iconTransmissions: '/images/portfolio/icon-transmissions.png',
 } as const
 
 const NAV_LINKS = [
-  { href: '#transmissions', label: 'TRANSMISSIONS' },
-  { href: '#missions', label: 'ARCHIVES' },
-  { href: '#systems', label: 'SYSTEMS' },
-  { href: '#transmissions', label: 'CONTACT' },
+  { href: '#missions', label: 'PROJECTS' },
+  { href: '#systems', label: 'SKILLS' },
+  { href: '#experience', label: 'EXPERIENCE' },
+  { href: '#transmissions', label: 'CONTACT ME' },
 ] as const satisfies ReadonlyArray<{ href: string; label: string }>
 
 const PROJECTS = [
@@ -63,13 +66,16 @@ const PROJECTS = [
   },
 ] as const
 
-const SKILLS = [
-  { name: 'JAVASCRIPT', icon: IMAGES.iconJs, height: 'h-[9px]' },
-  { name: 'PYTHON', icon: IMAGES.iconPython, height: 'h-6' },
-  { name: 'REACT', icon: IMAGES.iconReact, height: 'size-[27px]' },
-  { name: 'AWS', icon: IMAGES.iconAws, height: 'h-6' },
-  { name: 'DOCKER', icon: IMAGES.iconDocker, height: 'size-[30px]' },
-  { name: 'GIT', icon: IMAGES.iconGit, height: 'h-[15px]' },
+const SKILLS: ReadonlyArray<{
+  name: string
+  icon: LucideIcon
+}> = [
+  { name: 'JAVASCRIPT', icon: Braces },
+  { name: 'PYTHON', icon: Terminal },
+  { name: 'REACT', icon: Atom },
+  { name: 'AWS', icon: Cloud },
+  { name: 'DOCKER', icon: Container },
+  { name: 'GIT', icon: GitBranch },
 ] as const
 
 const EXPERIENCE = [
@@ -128,19 +134,19 @@ const accentStyles = {
 } as const
 
 function SectionHeading({
-  icon,
+  icon: Icon,
   id,
   children,
   className,
 }: {
-  icon: string
+  icon: LucideIcon
   id?: string
   children: ReactNode
   className?: string
 }) {
   return (
     <div className={cn('flex items-center gap-4', className)}>
-      <img src={icon} alt="" aria-hidden="true" className="size-6 shrink-0" />
+      <Icon className="size-6 shrink-0" aria-hidden />
       <h2
         id={id}
         className="font-display text-4xl uppercase tracking-wide"
@@ -255,7 +261,7 @@ function App() {
               FULL STACK DEVELOPER
             </h1>
             <p className="h-7 w-full max-w-[22rem] border-r-2 border-accent text-lg uppercase tracking-[0.18em] text-accent sm:max-w-none sm:whitespace-nowrap">
-              NEXT.JS, NODE.JS, REACT NATIVE
+              SPECIALIZED IN NEXT.JS, NODE.JS, REACT NATIVE
             </p>
           </div>
         </section>
@@ -267,11 +273,11 @@ function App() {
         >
           <div className="mx-auto flex max-w-7xl flex-col gap-12">
             <SectionHeading
-              icon={IMAGES.iconMissions}
+              icon={Crosshair}
               id="missions-heading"
               className="text-accent"
             >
-              MISSIONS
+              PROJECTS
             </SectionHeading>
 
             <ul className="grid gap-8 md:grid-cols-3">
@@ -330,12 +336,7 @@ function App() {
                 className="inline-flex min-h-11 min-w-44 items-center justify-center gap-2 border border-foreground px-8 py-4 font-display text-2xl uppercase tracking-wide text-foreground transition-colors hover:border-accent hover:text-accent focus-visible:outline-offset-4"
               >
                 VER MÁS
-                <img
-                  src={IMAGES.iconArrow}
-                  alt=""
-                  aria-hidden="true"
-                  className="size-4"
-                />
+                <ArrowRight className="size-4 shrink-0" aria-hidden />
               </a>
             </div>
           </div>
@@ -347,26 +348,28 @@ function App() {
           aria-labelledby="systems-heading"
         >
           <div className="flex flex-col gap-12">
-            <SectionHeading icon={IMAGES.iconSystems} id="systems-heading">
-              SYSTEMS
+            <SectionHeading icon={Settings} id="systems-heading">
+              SKILLS
             </SectionHeading>
             <ul className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6">
-              {SKILLS.map((skill) => (
-                <li
-                  key={skill.name}
-                  className="flex flex-col items-center gap-4 border border-border bg-surface-elevated p-6"
-                >
-                  <img
-                    src={skill.icon}
-                    alt=""
-                    aria-hidden="true"
-                    className={cn('w-auto object-contain', skill.height)}
-                  />
-                  <span className="text-xs font-bold tracking-widest">
-                    {skill.name}
-                  </span>
-                </li>
-              ))}
+              {SKILLS.map((skill) => {
+                const SkillIcon = skill.icon
+                return (
+                  <li
+                    key={skill.name}
+                    className="flex flex-col items-center gap-4 border border-border bg-surface-elevated p-6"
+                  >
+                    <SkillIcon
+                      className="size-7 text-foreground"
+                      strokeWidth={1.5}
+                      aria-hidden
+                    />
+                    <span className="text-xs font-bold tracking-widest">
+                      {skill.name}
+                    </span>
+                  </li>
+                )
+              })}
             </ul>
           </div>
         </section>
@@ -378,7 +381,7 @@ function App() {
         >
           <div className="mx-auto flex max-w-5xl flex-col gap-12">
             <SectionHeading
-              icon={IMAGES.iconExperience}
+              icon={Clock}
               id="experience-heading"
               className="text-accent"
             >
@@ -430,11 +433,11 @@ function App() {
         >
           <div className="mx-auto flex max-w-3xl flex-col gap-12">
             <SectionHeading
-              icon={IMAGES.iconTransmissions}
+              icon={Radio}
               id="transmissions-heading"
               className="text-accent"
             >
-              TRANSMISSIONS
+              CONTACT ME
             </SectionHeading>
 
             <form
