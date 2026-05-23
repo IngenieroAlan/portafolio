@@ -5,11 +5,18 @@ import {
   Braces,
   Clock,
   Cloud,
-  Container,
+  CreditCard,
   Crosshair,
+  Database,
   GitBranch,
+  GraduationCap,
+  Layers,
+  Mail,
+  MapPin,
+  Phone,
   Radio,
   Settings,
+  Smartphone,
   Terminal,
 } from 'lucide-react'
 import type { ReactNode } from 'react'
@@ -23,46 +30,57 @@ const IMAGES = {
   rebel: '/images/portfolio/rebel-data-stream.png',
 } as const
 
+const CONTACT = {
+  email: 'brandon.rod182@gmail.com',
+  phone: '+52 612 150 5307',
+  location: 'La Paz, México',
+  linkedin: 'https://linkedin.com/in/brandon-alan-rodriguez/',
+} as const
+
 const NAV_LINKS = [
   { href: '#missions', label: 'PROJECTS' },
   { href: '#systems', label: 'SKILLS' },
   { href: '#experience', label: 'EXPERIENCE' },
+  { href: '#education', label: 'EDUCATION' },
   { href: '#transmissions', label: 'CONTACT ME' },
 ] as const satisfies ReadonlyArray<{ href: string; label: string }>
 
 const PROJECTS = [
   {
-    title: 'HYPERDRIVE ENGINE',
+    title: 'IPALLY',
     accent: 'green' as const,
     image: IMAGES.hyperdrive,
     description: [
-      'High-performance routing and state',
-      'management system built for interstellar',
-      'speeds. Reduces load times by 99.9%.',
+      'Space reservation platform with Stripe Connect',
+      'for cross-border payments and vendor payout flows.',
+      'PostGIS geolocation with interactive maps and search.',
+      'Handlebars-powered email workflows for transactional delivery.',
     ],
-    tags: ['REACT', 'NODE.JS'],
+    tags: ['NEXT.JS', 'STRIPE', 'POSTGIS'],
   },
   {
-    title: 'HOLOCRON ARCHIVE',
+    title: 'RV&CO REAL ESTATE',
     accent: 'coral' as const,
     image: IMAGES.holocron,
     description: [
-      'Secure, encrypted database architecture',
-      'for ancient and sensitive information.',
-      'Features real-time sync across galaxies.',
+      'Mobile real estate app redesign focused on UX',
+      'and performance on mobile devices.',
+      '35% faster load times via lazy loading and asset optimization.',
+      'Full Google Play Store publishing and update lifecycle.',
     ],
-    tags: ['FIREBASE', 'NEXT.JS'],
+    tags: ['REACT NATIVE', 'EXPO', 'PERFORMANCE'],
   },
   {
-    title: 'REBEL DATA STREAM',
+    title: 'CUCUFATE',
+    url: 'https://www.cucufate.mx/',
     accent: 'blue' as const,
     image: IMAGES.rebel,
     description: [
-      'Real-time WebSocket implementation for',
-      'encrypted comms. Evades Imperial',
-      'tracking protocols seamlessly.',
+      'Artisan children\'s clothing e-commerce made in Mexico.',
+      'Led development of "Arma tu prenda" — a step-by-step wizard',
+      'to build custom garments by combining fabrics, styles, and sizes.',
     ],
-    tags: ['WEBSOCKETS', 'AWS'],
+    tags: ['NEXT.JS', 'E-COMMERCE', 'WIZARD'],
   },
 ] as const
 
@@ -70,47 +88,67 @@ const SKILLS: ReadonlyArray<{
   name: string
   icon: LucideIcon
 }> = [
-  { name: 'JAVASCRIPT', icon: Braces },
-  { name: 'PYTHON', icon: Terminal },
-  { name: 'REACT', icon: Atom },
-  { name: 'AWS', icon: Cloud },
-  { name: 'DOCKER', icon: Container },
+  { name: 'TYPESCRIPT', icon: Braces },
+  { name: 'REACT / NEXT.JS', icon: Atom },
+  { name: 'REACT NATIVE', icon: Smartphone },
+  { name: 'NODE / NESTJS', icon: Terminal },
+  { name: 'POSTGRESQL', icon: Database },
+  { name: 'FIREBASE', icon: Cloud },
+  { name: 'STRIPE API', icon: CreditCard },
   { name: 'GIT', icon: GitBranch },
+  { name: 'TAILWIND', icon: Layers },
+  { name: 'SSR / CACHE', icon: Settings },
 ] as const
 
 const EXPERIENCE = [
   {
     side: 'right' as const,
-    title: 'SENIOR HOLOCRON ARCHITECT',
-    period: '2022 - PRESENT',
+    title: 'FULL STACK DEVELOPER & TECH LEAD',
+    company: 'Promatic Soft',
+    period: 'JUN 2025 – JUN 2026 · LA PAZ, MX',
     description: [
-      'Led the architectural redesign of the main Jedi',
-      'Archives, implementing advanced caching',
-      'algorithms and real-time holographic sync',
-      'protocols.',
+      'Led 2 developers under Kanban, overseeing code quality',
+      'and technical unblocking for on-time delivery.',
+      'SSR and advanced caching for faster loads and SEO.',
+      'PostgreSQL, MySQL, Firebase, Stripe, and PostGIS backends.',
     ],
   },
   {
     side: 'left' as const,
-    title: 'REBEL SYSTEMS ANALYST',
-    period: '2019 - 2022',
+    title: 'JUNIOR FRONT-END DEVELOPER',
+    company: 'Promatic Soft',
+    period: 'SEP 2024 – DEC 2024 · LA PAZ, MX',
     description: [
-      'Developed evasive routing software for secure',
-      'communication channels, avoiding Imperial',
-      'detection mechanisms with 99.9% uptime.',
+      'Built a React.js CRM with CSV generation and quote',
+      'automation for commercial workflows.',
+      'Ensured visual consistency with the design team.',
     ],
   },
   {
     side: 'right' as const,
-    title: 'PADAWAN DEVELOPER',
-    period: '2017 - 2019',
+    title: 'MOBILE APPLICATION DEVELOPER',
+    company: 'Devco Baja',
+    period: 'AUG 2023 – FEB 2024 · LA PAZ, MX',
     description: [
-      'Assisted in maintaining legacy systems, learning',
-      'the ways of the Force (and modern web',
-      'frameworks) under the guidance of Jedi Masters.',
+      'Reduced mobile load times 35% via lazy loading and',
+      'asset optimization on the RV&CO real estate app.',
+      'Redesigned the mobile experience focused on UX and performance.',
+      'Managed Google Play Store publishing lifecycle.',
     ],
   },
 ] as const
+
+const EDUCATION = {
+  degree: 'B.S. SOFTWARE DEVELOPMENT ENGINEERING',
+  school: 'U.A. DE BAJA CALIFORNIA SUR',
+  period: '2020 – 2024',
+  gpa: 'GPA: 96/100',
+  highlights: [
+    '1st Place — Hardware Prototype Contest (Intermediate).',
+    '3rd Place — Software Prototype Contest (Advanced).',
+    'English B2 — EF SET Certified.',
+  ],
+} as const
 
 const accentStyles = {
   green: {
@@ -146,7 +184,7 @@ function HeroSection() {
           <div className="relative size-full overflow-hidden rounded-full">
             <img
               src={IMAGES.profile}
-              alt="Profile portrait"
+              alt="Brandon Alan Rodríguez Ramírez"
               className="size-full object-cover"
               width={224}
               height={224}
@@ -157,6 +195,9 @@ function HeroSection() {
             />
           </div>
         </div>
+        <p className="font-display text-lg uppercase tracking-[0.25em] text-muted-foreground sm:text-xl">
+          Brandon Alan Rodríguez Ramírez
+        </p>
         <h1
           id="hero-heading"
           className="font-display text-4xl uppercase tracking-[0.2em] text-[#e5e2e1] sm:text-[64px] sm:leading-[1.1]"
@@ -164,7 +205,16 @@ function HeroSection() {
           FULL STACK DEVELOPER
         </h1>
         <p className="h-7 w-full max-w-[22rem] border-r-2 border-accent text-lg uppercase tracking-[0.18em] text-accent sm:max-w-none sm:whitespace-nowrap">
-          SPECIALIZED IN NEXT.JS, NODE.JS, REACT NATIVE
+          NEXT.JS · NODE.JS · REACT NATIVE
+        </p>
+        <p className="max-w-xl text-base leading-relaxed text-muted-foreground">
+          Fullstack Software Engineer with 2+ years building scalable web and
+          mobile apps. Tech Lead experience under agile methodologies, focused on
+          performance (SSR, lazy loading) and financial & geolocation integrations.
+        </p>
+        <p className="flex items-center gap-2 text-sm tracking-widest text-muted-foreground">
+          <MapPin className="size-4 shrink-0 text-accent" aria-hidden />
+          {CONTACT.location}
         </p>
       </div>
     </section>
@@ -222,7 +272,7 @@ function App() {
             href="#hero"
             className="font-display text-2xl tracking-[-0.05em] text-accent focus-visible:outline-offset-4"
           >
-            JEDI_DEV
+            B.A. RODRÍGUEZ
           </a>
           <nav aria-label="Main" className="hidden md:block">
             <ul className="flex items-center gap-8">
@@ -307,7 +357,18 @@ function App() {
                         styles.title,
                       )}
                     >
-                      {project.title}
+                      {'url' in project && project.url ? (
+                        <a
+                          href={project.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="transition-opacity hover:opacity-80 focus-visible:outline-offset-4"
+                        >
+                          {project.title}
+                        </a>
+                      ) : (
+                        project.title
+                      )}
                     </h3>
                     <div className="text-base leading-6 text-muted-foreground">
                       {project.description.map((line) => (
@@ -354,7 +415,7 @@ function App() {
             <SectionHeading icon={Settings} id="systems-heading">
               SKILLS
             </SectionHeading>
-            <ul className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6">
+            <ul className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
               {SKILLS.map((skill) => {
                 const SkillIcon = skill.icon
                 return (
@@ -410,6 +471,9 @@ function App() {
                     <h3 className="font-display text-2xl uppercase tracking-wide">
                       {item.title}
                     </h3>
+                    <p className="mt-1 text-sm font-bold tracking-widest text-foreground">
+                      {item.company}
+                    </p>
                     <p className="mt-2 text-xs font-bold tracking-widest text-accent-glow">
                       {item.period}
                     </p>
@@ -430,6 +494,38 @@ function App() {
         </section>
 
         <section
+          id="education"
+          className="mx-auto max-w-7xl px-4 py-20 sm:px-16"
+          aria-labelledby="education-heading"
+        >
+          <div className="flex flex-col gap-12">
+            <SectionHeading
+              icon={GraduationCap}
+              id="education-heading"
+              className="text-accent"
+            >
+              EDUCATION
+            </SectionHeading>
+            <article className="max-w-2xl border border-[#1a1a1a] bg-surface px-8 py-8">
+              <h3 className="font-display text-2xl uppercase tracking-wide">
+                {EDUCATION.degree}
+              </h3>
+              <p className="mt-2 text-sm font-bold tracking-widest text-foreground">
+                {EDUCATION.school}
+              </p>
+              <p className="mt-2 text-xs font-bold tracking-widest text-accent-glow">
+                {EDUCATION.period} · {EDUCATION.gpa}
+              </p>
+              <ul className="mt-4 space-y-2 text-base leading-6 text-muted-foreground">
+                {EDUCATION.highlights.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+            </article>
+          </div>
+        </section>
+
+        <section
           id="transmissions"
           className="border-t border-border/30 bg-[hsl(0_0%_5%_/0.3)] px-4 py-20 sm:px-16 lg:px-64"
           aria-labelledby="transmissions-heading"
@@ -442,6 +538,46 @@ function App() {
             >
               CONTACT ME
             </SectionHeading>
+
+            <ul className="grid gap-4 sm:grid-cols-3">
+              <li>
+                <a
+                  href={`mailto:${CONTACT.email}`}
+                  className="flex min-h-11 flex-col items-center justify-center gap-2 border border-border bg-surface-elevated p-4 text-center transition-colors hover:border-accent hover:text-accent focus-visible:outline-offset-4"
+                >
+                  <Mail className="size-5 shrink-0" aria-hidden />
+                  <span className="text-xs font-bold tracking-widest break-all">
+                    {CONTACT.email}
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href={`tel:${CONTACT.phone.replace(/\s/g, '')}`}
+                  className="flex min-h-11 flex-col items-center justify-center gap-2 border border-border bg-surface-elevated p-4 text-center transition-colors hover:border-accent hover:text-accent focus-visible:outline-offset-4"
+                >
+                  <Phone className="size-5 shrink-0" aria-hidden />
+                  <span className="text-xs font-bold tracking-widest">
+                    {CONTACT.phone}
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href={CONTACT.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex min-h-11 flex-col items-center justify-center gap-2 border border-border bg-surface-elevated p-4 text-center transition-colors hover:border-accent hover:text-accent focus-visible:outline-offset-4"
+                >
+                  <span className="text-xs font-bold tracking-widest">
+                    LINKEDIN
+                  </span>
+                  <span className="text-xs text-muted-foreground">
+                    /in/brandon-alan-rodriguez
+                  </span>
+                </a>
+              </li>
+            </ul>
 
             <form
               className="flex flex-col gap-6"
@@ -516,7 +652,7 @@ function App() {
         className="flex flex-col items-center justify-between gap-6 border-t border-border bg-input px-4 py-6 sm:flex-row sm:px-16"
         data-node-id="2:163"
       >
-        <span className="font-display text-2xl">JEDI_DEV</span>
+        <span className="font-display text-2xl">B.A. RODRÍGUEZ</span>
         <nav aria-label="Footer">
           <ul className="flex flex-wrap justify-center gap-6">
             {(
@@ -538,7 +674,7 @@ function App() {
           </ul>
         </nav>
         <p className="text-center text-xs font-bold tracking-widest text-muted-foreground sm:text-right">
-          © 7977 BBY GALACTIC PORTFOLIO. ALL RIGHTS RESERVED.
+          © 2026 BRANDON ALAN RODRÍGUEZ RAMÍREZ. ALL RIGHTS RESERVED.
         </p>
       </footer>
     </div>
