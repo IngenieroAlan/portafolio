@@ -20,6 +20,7 @@ import {
   Terminal,
 } from 'lucide-react'
 import type { ReactNode } from 'react'
+import { HeroTypewriterSkills } from '@/components/hero-typewriter-skills'
 import { ParallaxStarfield } from '@/components/parallax-starfield'
 import { cn } from '@/lib/utils'
 
@@ -204,9 +205,7 @@ function HeroSection() {
         >
           FULL STACK DEVELOPER
         </h1>
-        <p className="h-7 w-full max-w-[22rem] border-r-2 border-accent text-lg uppercase tracking-[0.18em] text-accent sm:max-w-none sm:whitespace-nowrap">
-          NEXT.JS · NODE.JS · REACT NATIVE
-        </p>
+        <HeroTypewriterSkills />
         <p className="max-w-xl text-base leading-relaxed text-muted-foreground">
           Fullstack Software Engineer with 2+ years building scalable web and
           mobile apps. Tech Lead experience under agile methodologies, focused on
