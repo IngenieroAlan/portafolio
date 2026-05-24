@@ -1,0 +1,137 @@
+{
+  "meta": {
+    "title": "Brandon Rodríguez | Desarrollador Full Stack",
+    "description": "Brandon Alan Rodríguez Ramírez — Ingeniero de Software Fullstack y Tech Lead. React, Next.js, React Native, Node.js."
+  },
+  "a11y": {
+    "skipToContent": "Saltar al contenido principal",
+    "mainNav": "Principal",
+    "mobileNav": "Móvil",
+    "footerNav": "Pie de página",
+    "languageSwitcher": "Seleccionar idioma",
+    "profileAlt": "Brandon Alan Rodríguez Ramírez",
+    "experienceTimeline": "Línea de tiempo de experiencia laboral"
+  },
+  "language": {
+    "es": "Español",
+    "en": "Inglés"
+  },
+  "nav": {
+    "projects": "PROYECTOS",
+    "skills": "HABILIDADES",
+    "experience": "EXPERIENCIA",
+    "education": "EDUCACIÓN",
+    "contact": "CONTÁCTAME",
+    "archives": "ARCHIVOS",
+    "contactShort": "CONTACTO",
+    "viewMore": "VER MÁS"
+  },
+  "hero": {
+    "title": "DESARROLLADOR FULL STACK",
+    "bio": "Ingeniero de Software Fullstack con más de 2 años construyendo aplicaciones web y móviles escalables. Experiencia como Tech Lead bajo metodologías ágiles, enfocado en rendimiento (SSR, lazy loading) e integraciones financieras y de geolocalización.",
+    "typewriterAria": "Especializado en {{skills}}"
+  },
+  "sections": {
+    "projects": "PROYECTOS",
+    "skills": "HABILIDADES",
+    "experience": "EXPERIENCIA",
+    "education": "EDUCACIÓN",
+    "contact": "CONTÁCTAME"
+  },
+  "projects": {
+    "ipally": {
+      "title": "IPALLY",
+      "description": [
+        "Plataforma de reserva de espacios con Stripe Connect",
+        "para pagos transfronterizos y flujos de pago a proveedores.",
+        "Geolocalización PostGIS con mapas interactivos y búsqueda.",
+        "Flujos de correo con Handlebars para entrega transaccional."
+      ],
+      "tags": ["NEXT.JS", "STRIPE", "POSTGIS"]
+    },
+    "rvco": {
+      "title": "RV&CO REAL ESTATE",
+      "description": [
+        "Rediseño de app inmobiliaria móvil enfocado en UX",
+        "y rendimiento en dispositivos móviles.",
+        "35% más rápido en carga mediante lazy loading y optimización de assets.",
+        "Ciclo completo de publicación y actualización en Google Play Store."
+      ],
+      "tags": ["REACT NATIVE", "EXPO", "PERFORMANCE"]
+    },
+    "cucufate": {
+      "title": "CUCUFATE",
+      "description": [
+        "E-commerce de ropa artesanal infantil hecha en México.",
+        "Lideré el desarrollo de \"Arma tu prenda\" — un asistente paso a paso",
+        "para crear prendas personalizadas combinando telas, estilos y tallas."
+      ],
+      "tags": ["NEXT.JS", "E-COMMERCE", "WIZARD"]
+    }
+  },
+  "experience": {
+    "items": [
+      {
+        "title": "DESARROLLADOR FULL STACK Y TECH LEAD",
+        "company": "Promatic Soft",
+        "period": "JUN 2025 – JUN 2026 · LA PAZ, MX",
+        "description": [
+          "Lideré a 2 desarrolladores bajo Kanban, supervisando calidad de código",
+          "y desbloqueo técnico para entregas a tiempo.",
+          "SSR y caché avanzado para cargas más rápidas y SEO.",
+          "Backends con PostgreSQL, MySQL, Firebase, Stripe y PostGIS."
+        ]
+      },
+      {
+        "title": "DESARROLLADOR FRONT-END JUNIOR",
+        "company": "Promatic Soft",
+        "period": "SEP 2024 – DIC 2024 · LA PAZ, MX",
+        "description": [
+          "Construí un CRM en React.js con generación de CSV y",
+          "automatización de cotizaciones para flujos comerciales.",
+          "Aseguré consistencia visual con el equipo de diseño."
+        ]
+      },
+      {
+        "title": "DESARROLLADOR DE APLICACIONES MÓVILES",
+        "company": "Devco Baja",
+        "period": "AGO 2023 – FEB 2024 · LA PAZ, MX",
+        "description": [
+          "Reduje tiempos de carga móvil un 35% con lazy loading y",
+          "optimización de assets en la app inmobiliaria RV&CO.",
+          "Rediseñé la experiencia móvil enfocada en UX y rendimiento.",
+          "Gestioné el ciclo de publicación en Google Play Store."
+        ]
+      }
+    ]
+  },
+  "education": {
+    "degree": "ING. EN DESARROLLO DE SOFTWARE",
+    "school": "U.A. DE BAJA CALIFORNIA SUR",
+    "period": "2020 – 2024",
+    "gpa": "Promedio: 96/100",
+    "highlights": [
+      "1.er lugar — Concurso de Prototipo de Hardware (Intermedio).",
+      "3.er lugar — Concurso de Prototipo de Software (Avanzado).",
+      "Inglés B2 — Certificado EF SET."
+    ]
+  },
+  "contact": {
+    "linkedin": "LINKEDIN",
+    "form": {
+      "originName": "NOMBRE DE ORIGEN",
+      "originNamePlaceholder": "IDENTIFÍCATE",
+      "commsChannel": "CANAL DE COMUNICACIÓN",
+      "commsChannelPlaceholder": "CORREO CIFRADO",
+      "signalContent": "CONTENIDO DE LA SEÑAL",
+      "signalContentPlaceholder": "ESCRIBE TU MENSAJE AQUÍ...",
+      "submit": "ENVIAR SEÑAL"
+    }
+  },
+  "footer": {
+    "terminal": "TERMINAL",
+    "encryption": "CIFRADO",
+    "logs": "REGISTROS",
+    "copyright": "© 2026 BRANDON ALAN RODRÍGUEZ RAMÍREZ. TODOS LOS DERECHOS RESERVADOS."
+  }
+}
