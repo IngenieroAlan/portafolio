@@ -186,13 +186,9 @@ function HeroSection() {
             <img
               src={IMAGES.profile}
               alt="Brandon Alan Rodríguez Ramírez"
-              className="size-full object-cover"
+              className="size-full object-cover object-center"
               width={224}
               height={224}
-            />
-            <div
-              aria-hidden="true"
-              className="pointer-events-none absolute inset-0 rounded-full bg-white mix-blend-saturation"
             />
           </div>
         </div>
