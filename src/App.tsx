@@ -1,178 +1,36 @@
 import type { LucideIcon } from 'lucide-react'
 import {
   ArrowRight,
-  Atom,
-  Braces,
   Clock,
-  Cloud,
-  CreditCard,
   Crosshair,
-  Database,
-  GitBranch,
   GraduationCap,
-  Layers,
   Mail,
   MapPin,
   Phone,
   Radio,
   Settings,
-  Smartphone,
-  Terminal,
 } from 'lucide-react'
 import type { ReactNode } from 'react'
+import { useTranslation } from 'react-i18next'
 import { HeroTypewriterSkills } from '@/components/hero-typewriter-skills'
+import { LanguageSwitcher } from '@/components/language-switcher'
 import { ParallaxStarfield } from '@/components/parallax-starfield'
+import {
+  accentStyles,
+  CONTACT,
+  EXPERIENCE_STRUCTURE,
+  FOOTER_LINK_KEYS,
+  IMAGES,
+  NAV_LINK_KEYS,
+  PROJECTS_STRUCTURE,
+  SKILLS,
+} from '@/data/portfolio-structure'
+import { getExperienceItems, getStringArray } from '@/lib/i18n-helpers'
 import { cn } from '@/lib/utils'
 
-const IMAGES = {
-  profile: '/images/portfolio/profile-avatar.png',
-  hyperdrive: '/images/portfolio/hyperdrive-engine.png',
-  holocron: '/images/portfolio/holocron-archive.png',
-  rebel: '/images/portfolio/rebel-data-stream.png',
-} as const
-
-const CONTACT = {
-  email: 'brandon.rod182@gmail.com',
-  phone: '+52 612 150 5307',
-  location: 'La Paz, México',
-  linkedin: 'https://linkedin.com/in/brandon-alan-rodriguez/',
-} as const
-
-const NAV_LINKS = [
-  { href: '#missions', label: 'PROJECTS' },
-  { href: '#systems', label: 'SKILLS' },
-  { href: '#experience', label: 'EXPERIENCE' },
-  { href: '#education', label: 'EDUCATION' },
-  { href: '#transmissions', label: 'CONTACT ME' },
-] as const satisfies ReadonlyArray<{ href: string; label: string }>
-
-const PROJECTS = [
-  {
-    title: 'IPALLY',
-    accent: 'green' as const,
-    image: IMAGES.hyperdrive,
-    description: [
-      'Space reservation platform with Stripe Connect',
-      'for cross-border payments and vendor payout flows.',
-      'PostGIS geolocation with interactive maps and search.',
-      'Handlebars-powered email workflows for transactional delivery.',
-    ],
-    tags: ['NEXT.JS', 'STRIPE', 'POSTGIS'],
-  },
-  {
-    title: 'RV&CO REAL ESTATE',
-    accent: 'coral' as const,
-    image: IMAGES.holocron,
-    description: [
-      'Mobile real estate app redesign focused on UX',
-      'and performance on mobile devices.',
-      '35% faster load times via lazy loading and asset optimization.',
-      'Full Google Play Store publishing and update lifecycle.',
-    ],
-    tags: ['REACT NATIVE', 'EXPO', 'PERFORMANCE'],
-  },
-  {
-    title: 'CUCUFATE',
-    url: 'https://www.cucufate.mx/',
-    accent: 'blue' as const,
-    image: IMAGES.rebel,
-    description: [
-      'Artisan children\'s clothing e-commerce made in Mexico.',
-      'Led development of "Arma tu prenda" — a step-by-step wizard',
-      'to build custom garments by combining fabrics, styles, and sizes.',
-    ],
-    tags: ['NEXT.JS', 'E-COMMERCE', 'WIZARD'],
-  },
-] as const
-
-const SKILLS: ReadonlyArray<{
-  name: string
-  icon: LucideIcon
-}> = [
-  { name: 'TYPESCRIPT', icon: Braces },
-  { name: 'REACT / NEXT.JS', icon: Atom },
-  { name: 'REACT NATIVE', icon: Smartphone },
-  { name: 'NODE / NESTJS', icon: Terminal },
-  { name: 'POSTGRESQL', icon: Database },
-  { name: 'FIREBASE', icon: Cloud },
-  { name: 'STRIPE API', icon: CreditCard },
-  { name: 'GIT', icon: GitBranch },
-  { name: 'TAILWIND', icon: Layers },
-  { name: 'SSR / CACHE', icon: Settings },
-] as const
-
-const EXPERIENCE = [
-  {
-    side: 'right' as const,
-    title: 'FULL STACK DEVELOPER & TECH LEAD',
-    company: 'Promatic Soft',
-    period: 'JUN 2025 – JUN 2026 · LA PAZ, MX',
-    description: [
-      'Led 2 developers under Kanban, overseeing code quality',
-      'and technical unblocking for on-time delivery.',
-      'SSR and advanced caching for faster loads and SEO.',
-      'PostgreSQL, MySQL, Firebase, Stripe, and PostGIS backends.',
-    ],
-  },
-  {
-    side: 'left' as const,
-    title: 'JUNIOR FRONT-END DEVELOPER',
-    company: 'Promatic Soft',
-    period: 'SEP 2024 – DEC 2024 · LA PAZ, MX',
-    description: [
-      'Built a React.js CRM with CSV generation and quote',
-      'automation for commercial workflows.',
-      'Ensured visual consistency with the design team.',
-    ],
-  },
-  {
-    side: 'right' as const,
-    title: 'MOBILE APPLICATION DEVELOPER',
-    company: 'Devco Baja',
-    period: 'AUG 2023 – FEB 2024 · LA PAZ, MX',
-    description: [
-      'Reduced mobile load times 35% via lazy loading and',
-      'asset optimization on the RV&CO real estate app.',
-      'Redesigned the mobile experience focused on UX and performance.',
-      'Managed Google Play Store publishing lifecycle.',
-    ],
-  },
-] as const
-
-const EDUCATION = {
-  degree: 'B.S. SOFTWARE DEVELOPMENT ENGINEERING',
-  school: 'U.A. DE BAJA CALIFORNIA SUR',
-  period: '2020 – 2024',
-  gpa: 'GPA: 96/100',
-  highlights: [
-    '1st Place — Hardware Prototype Contest (Intermediate).',
-    '3rd Place — Software Prototype Contest (Advanced).',
-    'English B2 — EF SET Certified.',
-  ],
-} as const
-
-const accentStyles = {
-  green: {
-    title: 'text-neon-green',
-    border: 'border-neon-green',
-    shadow: 'drop-shadow-[0_0_7.5px_rgba(4,233,6,0.2)]',
-    tag: 'border-neon-green text-neon-green',
-  },
-  coral: {
-    title: 'text-neon-coral',
-    border: 'border-neon-coral',
-    shadow: 'drop-shadow-[0_0_7.5px_rgba(255,111,91,0.2)]',
-    tag: 'border-neon-coral text-neon-coral',
-  },
-  blue: {
-    title: 'text-accent-glow',
-    border: 'border-accent-glow',
-    shadow: 'drop-shadow-[0_0_7.5px_rgba(0,163,255,0.2)]',
-    tag: 'border-accent-glow text-accent-glow',
-  },
-} as const
-
 function HeroSection() {
+  const { t } = useTranslation()
+
   return (
     <section
       id="hero"
@@ -185,7 +43,7 @@ function HeroSection() {
           <div className="relative size-full overflow-hidden rounded-full">
             <img
               src={IMAGES.profile}
-              alt="Brandon Alan Rodríguez Ramírez"
+              alt={t('a11y.profileAlt')}
               className="size-full object-cover object-center"
               width={224}
               height={224}
@@ -199,13 +57,11 @@ function HeroSection() {
           id="hero-heading"
           className="font-display text-4xl uppercase tracking-[0.2em] text-[#e5e2e1] sm:text-[64px] sm:leading-[1.1]"
         >
-          FULL STACK DEVELOPER
+          {t('hero.title')}
         </h1>
         <HeroTypewriterSkills />
         <p className="max-w-xl text-base leading-relaxed text-muted-foreground">
-          Fullstack Software Engineer with 2+ years building scalable web and
-          mobile apps. Tech Lead experience under agile methodologies, focused on
-          performance (SSR, lazy loading) and financial & geolocation integrations.
+          {t('hero.bio')}
         </p>
         <p className="flex items-center gap-2 text-sm tracking-widest text-muted-foreground">
           <MapPin className="size-4 shrink-0 text-accent" aria-hidden />
@@ -241,6 +97,9 @@ function SectionHeading({
 }
 
 function App() {
+  const { t } = useTranslation()
+  const experienceItems = getExperienceItems(t)
+
   return (
     <div
       className="relative min-h-svh w-full text-foreground"
@@ -255,7 +114,7 @@ function App() {
         href="#main-content"
         className="visually-hidden focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:m-0 focus:inline-block focus:h-auto focus:w-auto focus:overflow-visible focus:rounded focus:bg-accent-glow focus:px-4 focus:py-2 focus:text-background focus:[clip:auto] focus:whitespace-normal"
       >
-        Skip to main content
+        {t('a11y.skipToContent')}
       </a>
 
       <header
@@ -269,43 +128,44 @@ function App() {
           >
             B.A. RODRÍGUEZ
           </a>
-          <nav aria-label="Main" className="hidden md:block">
+          <nav aria-label={t('a11y.mainNav')} className="hidden md:block">
             <ul className="flex items-center gap-8">
-              {NAV_LINKS.map((link) => (
-                <li key={`${link.href}-${link.label}`}>
+              {NAV_LINK_KEYS.map((link) => (
+                <li key={link.href}>
                   <a
                     href={link.href}
                     className="text-xs font-bold tracking-[0.12em] text-muted-foreground transition-colors hover:text-foreground focus-visible:outline-offset-4"
                   >
-                    {link.label}
+                    {t(link.labelKey)}
                   </a>
                 </li>
               ))}
             </ul>
           </nav>
           <div className="flex items-center gap-3">
+            <LanguageSwitcher />
             <nav
-              aria-label="Mobile"
+              aria-label={t('a11y.mobileNav')}
               className="flex gap-3 md:hidden"
             >
               <a
                 href="#missions"
                 className="text-xs font-bold tracking-widest text-muted-foreground"
               >
-                ARCHIVES
+                {t('nav.archives')}
               </a>
               <a
                 href="#transmissions"
                 className="text-xs font-bold tracking-widest text-muted-foreground"
               >
-                CONTACT
+                {t('nav.contactShort')}
               </a>
             </nav>
             <a
               href="#missions"
               className="inline-flex min-h-6 min-w-24 items-center justify-center border border-foreground px-6 py-2 text-center text-xs font-bold tracking-[0.12em] text-foreground transition-colors hover:border-accent hover:text-accent focus-visible:outline-offset-4"
             >
-              VER MÁS
+              {t('nav.viewMore')}
             </a>
           </div>
         </div>
@@ -325,15 +185,22 @@ function App() {
               id="missions-heading"
               className="text-accent"
             >
-              PROJECTS
+              {t('sections.projects')}
             </SectionHeading>
 
             <ul className="grid gap-8 md:grid-cols-3">
-              {PROJECTS.map((project) => {
+              {PROJECTS_STRUCTURE.map((project) => {
                 const styles = accentStyles[project.accent]
+                const title = t(`projects.${project.id}.title`)
+                const description = getStringArray(
+                  t,
+                  `projects.${project.id}.description`,
+                )
+                const tags = getStringArray(t, `projects.${project.id}.tags`)
+
                 return (
                   <li
-                    key={project.title}
+                    key={project.id}
                     className={cn(
                       'flex flex-col gap-4 border border-[#1a1a1a] bg-surface p-4',
                       styles.shadow,
@@ -352,26 +219,26 @@ function App() {
                         styles.title,
                       )}
                     >
-                      {'url' in project && project.url ? (
+                      {project.url ? (
                         <a
                           href={project.url}
                           target="_blank"
                           rel="noopener noreferrer"
                           className="transition-opacity hover:opacity-80 focus-visible:outline-offset-4"
                         >
-                          {project.title}
+                          {title}
                         </a>
                       ) : (
-                        project.title
+                        title
                       )}
                     </h3>
                     <div className="text-base leading-6 text-muted-foreground">
-                      {project.description.map((line) => (
-                        <p key={line}>{line}</p>
+                      {description.map((line, index) => (
+                        <p key={`${project.id}-desc-${index}`}>{line}</p>
                       ))}
                     </div>
                     <ul className="flex flex-wrap gap-2 border-t border-border/50 pt-4">
-                      {project.tags.map((tag) => (
+                      {tags.map((tag) => (
                         <li key={tag}>
                           <span
                             className={cn(
@@ -394,7 +261,7 @@ function App() {
                 href="#missions"
                 className="inline-flex min-h-11 min-w-44 items-center justify-center gap-2 border border-foreground px-8 py-4 font-display text-2xl uppercase tracking-wide text-foreground transition-colors hover:border-accent hover:text-accent focus-visible:outline-offset-4"
               >
-                VER MÁS
+                {t('nav.viewMore')}
                 <ArrowRight className="size-4 shrink-0" aria-hidden />
               </a>
             </div>
@@ -408,7 +275,7 @@ function App() {
         >
           <div className="flex flex-col gap-12">
             <SectionHeading icon={Settings} id="systems-heading">
-              SKILLS
+              {t('sections.skills')}
             </SectionHeading>
             <ul className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
               {SKILLS.map((skill) => {
@@ -444,46 +311,54 @@ function App() {
               id="experience-heading"
               className="text-accent"
             >
-              EXPERIENCE
+              {t('sections.experience')}
             </SectionHeading>
 
-            <ol className="relative space-y-12" aria-label="Work experience timeline">
+            <ol
+              className="relative space-y-12"
+              aria-label={t('a11y.experienceTimeline')}
+            >
               <div
                 className="absolute bottom-0 left-1/2 top-0 w-0.5 -translate-x-1/2 bg-accent-glow shadow-[0_0_10px_#00a3ff]"
                 aria-hidden="true"
               />
-              {EXPERIENCE.map((item) => (
-                <li
-                  key={item.title}
-                  className={cn(
-                    'relative flex',
-                    item.side === 'right'
-                      ? 'justify-end pl-0 md:pl-[58%]'
-                      : 'justify-start pr-0 md:pr-[58%]',
-                  )}
-                >
-                  <article className="w-full max-w-md border border-[#1a1a1a] bg-surface px-6 py-6">
-                    <h3 className="font-display text-2xl uppercase tracking-wide">
-                      {item.title}
-                    </h3>
-                    <p className="mt-1 text-sm font-bold tracking-widest text-foreground">
-                      {item.company}
-                    </p>
-                    <p className="mt-2 text-xs font-bold tracking-widest text-accent-glow">
-                      {item.period}
-                    </p>
-                    <div className="mt-2 text-base leading-6 text-muted-foreground">
-                      {item.description.map((line) => (
-                        <p key={line}>{line}</p>
-                      ))}
-                    </div>
-                  </article>
-                  <span
-                    className="absolute left-1/2 top-1/2 size-4 -translate-x-1/2 -translate-y-1/2 rounded-full bg-accent-glow shadow-[0_0_10px_#00a3ff,0_0_20px_#00a3ff]"
-                    aria-hidden="true"
-                  />
-                </li>
-              ))}
+              {EXPERIENCE_STRUCTURE.map((item, index) => {
+                const experience = experienceItems[index]
+                if (!experience) return null
+
+                return (
+                  <li
+                    key={item.id}
+                    className={cn(
+                      'relative flex',
+                      item.side === 'right'
+                        ? 'justify-end pl-0 md:pl-[58%]'
+                        : 'justify-start pr-0 md:pr-[58%]',
+                    )}
+                  >
+                    <article className="w-full max-w-md border border-[#1a1a1a] bg-surface px-6 py-6">
+                      <h3 className="font-display text-2xl uppercase tracking-wide">
+                        {experience.title}
+                      </h3>
+                      <p className="mt-1 text-sm font-bold tracking-widest text-foreground">
+                        {experience.company}
+                      </p>
+                      <p className="mt-2 text-xs font-bold tracking-widest text-accent-glow">
+                        {experience.period}
+                      </p>
+                      <div className="mt-2 text-base leading-6 text-muted-foreground">
+                        {experience.description.map((line, lineIndex) => (
+                          <p key={`${item.id}-line-${lineIndex}`}>{line}</p>
+                        ))}
+                      </div>
+                    </article>
+                    <span
+                      className="absolute left-1/2 top-1/2 size-4 -translate-x-1/2 -translate-y-1/2 rounded-full bg-accent-glow shadow-[0_0_10px_#00a3ff,0_0_20px_#00a3ff]"
+                      aria-hidden="true"
+                    />
+                  </li>
+                )
+              })}
             </ol>
           </div>
         </section>
@@ -499,22 +374,24 @@ function App() {
               id="education-heading"
               className="text-accent"
             >
-              EDUCATION
+              {t('sections.education')}
             </SectionHeading>
             <article className="max-w-2xl border border-[#1a1a1a] bg-surface px-8 py-8">
               <h3 className="font-display text-2xl uppercase tracking-wide">
-                {EDUCATION.degree}
+                {t('education.degree')}
               </h3>
               <p className="mt-2 text-sm font-bold tracking-widest text-foreground">
-                {EDUCATION.school}
+                {t('education.school')}
               </p>
               <p className="mt-2 text-xs font-bold tracking-widest text-accent-glow">
-                {EDUCATION.period} · {EDUCATION.gpa}
+                {t('education.period')} · {t('education.gpa')}
               </p>
               <ul className="mt-4 space-y-2 text-base leading-6 text-muted-foreground">
-                {EDUCATION.highlights.map((item) => (
-                  <li key={item}>{item}</li>
-                ))}
+                {getStringArray(t, 'education.highlights').map(
+                  (highlight, index) => (
+                    <li key={`education-highlight-${index}`}>{highlight}</li>
+                  ),
+                )}
               </ul>
             </article>
           </div>
@@ -531,7 +408,7 @@ function App() {
               id="transmissions-heading"
               className="text-accent"
             >
-              CONTACT ME
+              {t('sections.contact')}
             </SectionHeading>
 
             <ul className="grid gap-4 sm:grid-cols-3">
@@ -565,7 +442,7 @@ function App() {
                   className="flex min-h-11 flex-col items-center justify-center gap-2 border border-border bg-surface-elevated p-4 text-center transition-colors hover:border-accent hover:text-accent focus-visible:outline-offset-4"
                 >
                   <span className="text-xs font-bold tracking-widest">
-                    LINKEDIN
+                    {t('contact.linkedin')}
                   </span>
                   <span className="text-xs text-muted-foreground">
                     /in/brandon-alan-rodriguez
@@ -586,7 +463,7 @@ function App() {
                     htmlFor="origin-name"
                     className="text-xs font-bold tracking-widest text-muted-foreground"
                   >
-                    ORIGIN NAME
+                    {t('contact.form.originName')}
                   </label>
                   <input
                     id="origin-name"
@@ -594,7 +471,7 @@ function App() {
                     type="text"
                     autoComplete="name"
                     required
-                    placeholder="IDENTIFY YOURSELF"
+                    placeholder={t('contact.form.originNamePlaceholder')}
                     className="min-h-11 border border-border bg-input px-4 py-3 text-base uppercase text-foreground placeholder:text-muted-foreground/50"
                   />
                 </div>
@@ -603,7 +480,7 @@ function App() {
                     htmlFor="comms-channel"
                     className="text-xs font-bold tracking-widest text-muted-foreground"
                   >
-                    COMMS CHANNEL
+                    {t('contact.form.commsChannel')}
                   </label>
                   <input
                     id="comms-channel"
@@ -611,7 +488,7 @@ function App() {
                     type="email"
                     autoComplete="email"
                     required
-                    placeholder="ENCRYPTED EMAIL"
+                    placeholder={t('contact.form.commsChannelPlaceholder')}
                     className="min-h-11 border border-border bg-input px-4 py-3 text-base uppercase text-foreground placeholder:text-muted-foreground/50"
                   />
                 </div>
@@ -621,14 +498,14 @@ function App() {
                   htmlFor="signal-content"
                   className="text-xs font-bold tracking-widest text-muted-foreground"
                 >
-                  SIGNAL CONTENT
+                  {t('contact.form.signalContent')}
                 </label>
                 <textarea
                   id="signal-content"
                   name="signalContent"
                   rows={5}
                   required
-                  placeholder="TYPE YOUR MESSAGE HERE..."
+                  placeholder={t('contact.form.signalContentPlaceholder')}
                   className="min-h-32 resize-y border border-border bg-input px-4 py-3 text-base uppercase text-foreground placeholder:text-muted-foreground/50"
                 />
               </div>
@@ -636,7 +513,7 @@ function App() {
                 type="submit"
                 className="min-h-11 w-full border border-accent py-4 font-display text-2xl uppercase tracking-[0.2em] text-accent shadow-[0_0_15px_rgba(0,163,255,0.3)] transition-colors hover:bg-accent/10 focus-visible:outline-offset-4"
               >
-                SEND SIGNAL
+                {t('contact.form.submit')}
               </button>
             </form>
           </div>
@@ -648,28 +525,22 @@ function App() {
         data-node-id="2:163"
       >
         <span className="font-display text-2xl">B.A. RODRÍGUEZ</span>
-        <nav aria-label="Footer">
+        <nav aria-label={t('a11y.footerNav')}>
           <ul className="flex flex-wrap justify-center gap-6">
-            {(
-              [
-                { label: 'TERMINAL', href: '#hero' },
-                { label: 'ENCRYPTION', href: '#transmissions' },
-                { label: 'LOGS', href: '#experience' },
-              ] as const
-            ).map((item) => (
-              <li key={item.label}>
+            {FOOTER_LINK_KEYS.map((item) => (
+              <li key={item.labelKey}>
                 <a
                   href={item.href}
                   className="inline-flex min-h-6 min-w-6 items-center text-xs font-bold tracking-widest text-muted-foreground hover:text-foreground focus-visible:outline-offset-4"
                 >
-                  {item.label}
+                  {t(item.labelKey)}
                 </a>
               </li>
             ))}
           </ul>
         </nav>
         <p className="text-center text-xs font-bold tracking-widest text-muted-foreground sm:text-right">
-          © 2026 BRANDON ALAN RODRÍGUEZ RAMÍREZ. ALL RIGHTS RESERVED.
+          {t('footer.copyright')}
         </p>
       </footer>
     </div>

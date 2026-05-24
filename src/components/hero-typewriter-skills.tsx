@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next'
 import { useTypewriter } from '@/hooks/use-typewriter'
 import { cn } from '@/lib/utils'
 
@@ -8,6 +9,7 @@ const HERO_SKILLS = [
 ] as const
 
 export function HeroTypewriterSkills() {
+  const { t } = useTranslation()
   const { displayText, fullText, isComplete, prefersReducedMotion } =
     useTypewriter({
       segments: HERO_SKILLS,
@@ -16,7 +18,7 @@ export function HeroTypewriterSkills() {
   return (
     <p
       className="flex w-full max-w-2xl justify-center px-2 text-center"
-      aria-label={`Especializado en ${fullText}`}
+      aria-label={t('hero.typewriterAria', { skills: fullText })}
     >
       <span
         translate="no"

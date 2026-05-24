@@ -1,0 +1,137 @@
+{
+  "meta": {
+    "title": "Brandon Rodríguez | Full Stack Developer",
+    "description": "Brandon Alan Rodríguez Ramírez — Fullstack Software Engineer & Tech Lead. React, Next.js, React Native, Node.js."
+  },
+  "a11y": {
+    "skipToContent": "Skip to main content",
+    "mainNav": "Main",
+    "mobileNav": "Mobile",
+    "footerNav": "Footer",
+    "languageSwitcher": "Select language",
+    "profileAlt": "Brandon Alan Rodríguez Ramírez",
+    "experienceTimeline": "Work experience timeline"
+  },
+  "language": {
+    "es": "Spanish",
+    "en": "English"
+  },
+  "nav": {
+    "projects": "PROJECTS",
+    "skills": "SKILLS",
+    "experience": "EXPERIENCE",
+    "education": "EDUCATION",
+    "contact": "CONTACT ME",
+    "archives": "ARCHIVES",
+    "contactShort": "CONTACT",
+    "viewMore": "VIEW MORE"
+  },
+  "hero": {
+    "title": "FULL STACK DEVELOPER",
+    "bio": "Fullstack Software Engineer with 2+ years building scalable web and mobile apps. Tech Lead experience under agile methodologies, focused on performance (SSR, lazy loading) and financial & geolocation integrations.",
+    "typewriterAria": "Specialized in {{skills}}"
+  },
+  "sections": {
+    "projects": "PROJECTS",
+    "skills": "SKILLS",
+    "experience": "EXPERIENCE",
+    "education": "EDUCATION",
+    "contact": "CONTACT ME"
+  },
+  "projects": {
+    "ipally": {
+      "title": "IPALLY",
+      "description": [
+        "Space reservation platform with Stripe Connect",
+        "for cross-border payments and vendor payout flows.",
+        "PostGIS geolocation with interactive maps and search.",
+        "Handlebars-powered email workflows for transactional delivery."
+      ],
+      "tags": ["NEXT.JS", "STRIPE", "POSTGIS"]
+    },
+    "rvco": {
+      "title": "RV&CO REAL ESTATE",
+      "description": [
+        "Mobile real estate app redesign focused on UX",
+        "and performance on mobile devices.",
+        "35% faster load times via lazy loading and asset optimization.",
+        "Full Google Play Store publishing and update lifecycle."
+      ],
+      "tags": ["REACT NATIVE", "EXPO", "PERFORMANCE"]
+    },
+    "cucufate": {
+      "title": "CUCUFATE",
+      "description": [
+        "Artisan children's clothing e-commerce made in Mexico.",
+        "Led development of \"Arma tu prenda\" — a step-by-step wizard",
+        "to build custom garments by combining fabrics, styles, and sizes."
+      ],
+      "tags": ["NEXT.JS", "E-COMMERCE", "WIZARD"]
+    }
+  },
+  "experience": {
+    "items": [
+      {
+        "title": "FULL STACK DEVELOPER & TECH LEAD",
+        "company": "Promatic Soft",
+        "period": "JUN 2025 – JUN 2026 · LA PAZ, MX",
+        "description": [
+          "Led 2 developers under Kanban, overseeing code quality",
+          "and technical unblocking for on-time delivery.",
+          "SSR and advanced caching for faster loads and SEO.",
+          "PostgreSQL, MySQL, Firebase, Stripe, and PostGIS backends."
+        ]
+      },
+      {
+        "title": "JUNIOR FRONT-END DEVELOPER",
+        "company": "Promatic Soft",
+        "period": "SEP 2024 – DEC 2024 · LA PAZ, MX",
+        "description": [
+          "Built a React.js CRM with CSV generation and quote",
+          "automation for commercial workflows.",
+          "Ensured visual consistency with the design team."
+        ]
+      },
+      {
+        "title": "MOBILE APPLICATION DEVELOPER",
+        "company": "Devco Baja",
+        "period": "AUG 2023 – FEB 2024 · LA PAZ, MX",
+        "description": [
+          "Reduced mobile load times 35% via lazy loading and",
+          "asset optimization on the RV&CO real estate app.",
+          "Redesigned the mobile experience focused on UX and performance.",
+          "Managed Google Play Store publishing lifecycle."
+        ]
+      }
+    ]
+  },
+  "education": {
+    "degree": "B.S. SOFTWARE DEVELOPMENT ENGINEERING",
+    "school": "U.A. DE BAJA CALIFORNIA SUR",
+    "period": "2020 – 2024",
+    "gpa": "GPA: 96/100",
+    "highlights": [
+      "1st Place — Hardware Prototype Contest (Intermediate).",
+      "3rd Place — Software Prototype Contest (Advanced).",
+      "English B2 — EF SET Certified."
+    ]
+  },
+  "contact": {
+    "linkedin": "LINKEDIN",
+    "form": {
+      "originName": "ORIGIN NAME",
+      "originNamePlaceholder": "IDENTIFY YOURSELF",
+      "commsChannel": "COMMS CHANNEL",
+      "commsChannelPlaceholder": "ENCRYPTED EMAIL",
+      "signalContent": "SIGNAL CONTENT",
+      "signalContentPlaceholder": "TYPE YOUR MESSAGE HERE...",
+      "submit": "SEND SIGNAL"
+    }
+  },
+  "footer": {
+    "terminal": "TERMINAL",
+    "encryption": "ENCRYPTION",
+    "logs": "LOGS",
+    "copyright": "© 2026 BRANDON ALAN RODRÍGUEZ RAMÍREZ. ALL RIGHTS RESERVED."
+  }
+}
