@@ -9,7 +9,14 @@ export interface ExperienceItemTranslation {
   title: string
   company: string
   period: string
-  description: string[]
+  description: string
+}
+
+export function splitDescriptionLines(text: string): string[] {
+  return text
+    .split('\n')
+    .map((line) => line.trim())
+    .filter((line) => line.length > 0)
 }
 
 export function getExperienceItems(

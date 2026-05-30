@@ -75,33 +75,19 @@
         "title": "FULL STACK DEVELOPER & TECH LEAD",
         "company": "Promatic Soft",
         "period": "JUN 2025 – JUN 2026 · LA PAZ, MX",
-        "description": [
-          "Led 2 developers under Kanban, overseeing code quality",
-          "and technical unblocking for on-time delivery.",
-          "SSR and advanced caching for faster loads and SEO.",
-          "PostgreSQL, MySQL, Firebase, Stripe, and PostGIS backends."
-        ]
+        "description": "Led 2 developers under Kanban, overseeing code quality and technical unblocking for on-time delivery.\nSSR and advanced caching for faster loads and SEO.\nPostgreSQL, MySQL, Firebase, Stripe, and PostGIS backends."
       },
       {
         "title": "JUNIOR FRONT-END DEVELOPER",
         "company": "Promatic Soft",
         "period": "SEP 2024 – DEC 2024 · LA PAZ, MX",
-        "description": [
-          "Built a React.js CRM with CSV generation and quote",
-          "automation for commercial workflows.",
-          "Ensured visual consistency with the design team."
-        ]
+        "description": "Built a React.js CRM with CSV generation and quote automation for commercial workflows.\nEnsured visual consistency with the design team."
       },
       {
         "title": "MOBILE APPLICATION DEVELOPER",
         "company": "Devco Baja",
         "period": "AUG 2023 – FEB 2024 · LA PAZ, MX",
-        "description": [
-          "Reduced mobile load times 35% via lazy loading and",
-          "asset optimization on the RV&CO real estate app.",
-          "Redesigned the mobile experience focused on UX and performance.",
-          "Managed Google Play Store publishing lifecycle."
-        ]
+        "description": "Reduced mobile load times 35% via lazy loading and asset optimization on the RV&CO real estate app.\nRedesigned the mobile experience focused on UX and performance.\nManaged Google Play Store publishing lifecycle."
       }
     ]
   },
@@ -119,19 +105,19 @@
   "contact": {
     "linkedin": "LINKEDIN",
     "form": {
-      "originName": "ORIGIN NAME",
-      "originNamePlaceholder": "IDENTIFY YOURSELF",
-      "commsChannel": "COMMS CHANNEL",
-      "commsChannelPlaceholder": "ENCRYPTED EMAIL",
-      "signalContent": "SIGNAL CONTENT",
+      "originName": "NAME",
+      "originNamePlaceholder": "YOUR NAME",
+      "commsChannel": "EMAIL",
+      "commsChannelPlaceholder": "YOUR EMAIL",
+      "signalContent": "MESSAGE",
       "signalContentPlaceholder": "TYPE YOUR MESSAGE HERE...",
-      "submit": "SEND SIGNAL"
+      "submit": "SEND"
     }
   },
   "footer": {
-    "terminal": "TERMINAL",
-    "encryption": "ENCRYPTION",
-    "logs": "LOGS",
+    "terminal": "ABOUT ME",
+    "encryption": "CONTACT",
+    "logs": "EXPERIENCE",
     "copyright": "© 2026 BRANDON ALAN RODRÍGUEZ RAMÍREZ. ALL RIGHTS RESERVED."
   }
 }
