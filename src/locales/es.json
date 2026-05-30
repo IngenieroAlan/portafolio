@@ -75,33 +75,19 @@
         "title": "DESARROLLADOR FULL STACK Y TECH LEAD",
         "company": "Promatic Soft",
         "period": "JUN 2025 – JUN 2026 · LA PAZ, MX",
-        "description": [
-          "Lideré a 2 desarrolladores bajo Kanban, supervisando calidad de código",
-          "y desbloqueo técnico para entregas a tiempo.",
-          "SSR y caché avanzado para cargas más rápidas y SEO.",
-          "Backends con PostgreSQL, MySQL, Firebase, Stripe y PostGIS."
-        ]
+        "description": "Lideré a 2 desarrolladores bajo Kanban, supervisando calidad de código y desbloqueo técnico para entregas a tiempo.\nSSR y caché avanzado para cargas más rápidas y SEO.\nBackends con PostgreSQL, MySQL, Firebase, Stripe y PostGIS."
       },
       {
         "title": "DESARROLLADOR FRONT-END JUNIOR",
         "company": "Promatic Soft",
         "period": "SEP 2024 – DIC 2024 · LA PAZ, MX",
-        "description": [
-          "Construí un CRM en React.js con generación de CSV y",
-          "automatización de cotizaciones para flujos comerciales.",
-          "Aseguré consistencia visual con el equipo de diseño."
-        ]
+        "description": "Construí un CRM en React.js con generación de CSV y automatización de cotizaciones para flujos comerciales.\nAseguré consistencia visual con el equipo de diseño."
       },
       {
         "title": "DESARROLLADOR DE APLICACIONES MÓVILES",
         "company": "Devco Baja",
         "period": "AGO 2023 – FEB 2024 · LA PAZ, MX",
-        "description": [
-          "Reduje tiempos de carga móvil un 35% con lazy loading y",
-          "optimización de assets en la app inmobiliaria RV&CO.",
-          "Rediseñé la experiencia móvil enfocada en UX y rendimiento.",
-          "Gestioné el ciclo de publicación en Google Play Store."
-        ]
+        "description": "Reduje tiempos de carga móvil un 35% con lazy loading y optimización de assets en la app inmobiliaria RV&CO.\nRediseñé la experiencia móvil enfocada en UX y rendimiento.\nGestioné el ciclo de publicación en Google Play Store."
       }
     ]
   },
@@ -119,19 +105,19 @@
   "contact": {
     "linkedin": "LINKEDIN",
     "form": {
-      "originName": "NOMBRE DE ORIGEN",
-      "originNamePlaceholder": "IDENTIFÍCATE",
-      "commsChannel": "CANAL DE COMUNICACIÓN",
-      "commsChannelPlaceholder": "CORREO CIFRADO",
-      "signalContent": "CONTENIDO DE LA SEÑAL",
+      "originName": "NOMBRE",
+      "originNamePlaceholder": "TU NOMBRE",
+      "commsChannel": "CORREO ELECTRÓNICO",
+      "commsChannelPlaceholder": "TU CORREO ELECTRÓNICO",
+      "signalContent": "MENSAJE",
       "signalContentPlaceholder": "ESCRIBE TU MENSAJE AQUÍ...",
-      "submit": "ENVIAR SEÑAL"
+      "submit": "ENVIAR"
     }
   },
   "footer": {
-    "terminal": "TERMINAL",
-    "encryption": "CIFRADO",
-    "logs": "REGISTROS",
+    "terminal": "SOBRE MÍ",
+    "encryption": "CONTACTO",
+    "logs": "EXPERIENCIA",
     "copyright": "© 2026 BRANDON ALAN RODRÍGUEZ RAMÍREZ. TODOS LOS DERECHOS RESERVADOS."
   }
 }

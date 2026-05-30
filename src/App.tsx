@@ -25,7 +25,7 @@ import {
   PROJECTS_STRUCTURE,
   SKILLS,
 } from '@/data/portfolio-structure'
-import { getExperienceItems, getStringArray } from '@/lib/i18n-helpers'
+import { getExperienceItems, getStringArray, splitDescriptionLines } from '@/lib/i18n-helpers'
 import { cn } from '@/lib/utils'
 
 function HeroSection() {
@@ -347,9 +347,11 @@ function App() {
                         {experience.period}
                       </p>
                       <div className="mt-2 text-base leading-6 text-muted-foreground">
-                        {experience.description.map((line, lineIndex) => (
-                          <p key={`${item.id}-line-${lineIndex}`}>{line}</p>
-                        ))}
+                        {splitDescriptionLines(experience.description).map(
+                          (line, lineIndex) => (
+                            <p key={`${item.id}-line-${lineIndex}`}>{line}</p>
+                          ),
+                        )}
                       </div>
                     </article>
                     <span
@@ -524,7 +526,7 @@ function App() {
         className="flex flex-col items-center justify-between gap-6 border-t border-border bg-input px-4 py-6 sm:flex-row sm:px-16"
         data-node-id="2:163"
       >
-        <span className="font-display text-2xl">B.A. RODRÍGUEZ</span>
+        <span className="font-display text-2xl">Brandon A. RODRÍGUEZ</span>
         <nav aria-label={t('a11y.footerNav')}>
           <ul className="flex flex-wrap justify-center gap-6">
             {FOOTER_LINK_KEYS.map((item) => (
