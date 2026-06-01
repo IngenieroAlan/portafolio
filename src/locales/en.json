@@ -10,7 +10,9 @@
     "footerNav": "Footer",
     "languageSwitcher": "Select language",
     "profileAlt": "Brandon Alan Rodríguez Ramírez",
-    "experienceTimeline": "Work experience timeline"
+    "experienceTimeline": "Work experience timeline",
+    "openMenu": "Open navigation menu",
+    "closeMenu": "Close navigation menu"
   },
   "language": {
     "es": "Spanish",

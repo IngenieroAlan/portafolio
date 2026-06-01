@@ -13,7 +13,7 @@ import {
 import type { ReactNode } from 'react'
 import { useTranslation } from 'react-i18next'
 import { HeroTypewriterSkills } from '@/components/hero-typewriter-skills'
-import { LanguageSwitcher } from '@/components/language-switcher'
+import { SiteHeader } from '@/components/site-header'
 import { ParallaxStarfield } from '@/components/parallax-starfield'
 import {
   accentStyles,
@@ -21,7 +21,6 @@ import {
   EXPERIENCE_STRUCTURE,
   FOOTER_LINK_KEYS,
   IMAGES,
-  NAV_LINK_KEYS,
   PROJECTS_STRUCTURE,
   SKILLS,
 } from '@/data/portfolio-structure'
@@ -117,59 +116,7 @@ function App() {
         {t('a11y.skipToContent')}
       </a>
 
-      <header
-        className="fixed inset-x-0 top-0 z-50 border-b border-accent-glow bg-[rgba(19,19,19,0.8)] px-4 py-4 shadow-[0_4px_12px_rgba(0,163,255,0.3)] backdrop-blur-[6px] sm:px-16"
-        data-node-id="2:175"
-      >
-        <div className="mx-auto flex max-w-7xl items-center justify-between gap-4">
-          <a
-            href="#hero"
-            className="font-display text-2xl tracking-[-0.05em] text-accent focus-visible:outline-offset-4"
-          >
-            B.A. RODRÍGUEZ
-          </a>
-          <nav aria-label={t('a11y.mainNav')} className="hidden md:block">
-            <ul className="flex items-center gap-8">
-              {NAV_LINK_KEYS.map((link) => (
-                <li key={link.href}>
-                  <a
-                    href={link.href}
-                    className="text-xs font-bold tracking-[0.12em] text-muted-foreground transition-colors hover:text-foreground focus-visible:outline-offset-4"
-                  >
-                    {t(link.labelKey)}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </nav>
-          <div className="flex items-center gap-3">
-            <LanguageSwitcher />
-            <nav
-              aria-label={t('a11y.mobileNav')}
-              className="flex gap-3 md:hidden"
-            >
-              <a
-                href="#missions"
-                className="text-xs font-bold tracking-widest text-muted-foreground"
-              >
-                {t('nav.archives')}
-              </a>
-              <a
-                href="#transmissions"
-                className="text-xs font-bold tracking-widest text-muted-foreground"
-              >
-                {t('nav.contactShort')}
-              </a>
-            </nav>
-            <a
-              href="#missions"
-              className="inline-flex min-h-6 min-w-24 items-center justify-center border border-foreground px-6 py-2 text-center text-xs font-bold tracking-[0.12em] text-foreground transition-colors hover:border-accent hover:text-accent focus-visible:outline-offset-4"
-            >
-              {t('nav.viewMore')}
-            </a>
-          </div>
-        </div>
-      </header>
+      <SiteHeader />
 
       <main id="main-content" className="pt-20">
         <HeroSection />
