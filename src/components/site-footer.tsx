@@ -9,7 +9,7 @@ export function SiteFooter() {
       className="flex flex-col items-center justify-between gap-6 border-t border-border bg-input px-4 py-6 sm:flex-row sm:px-16"
       data-node-id="2:163"
     >
-      <span className="font-display text-2xl">Brandon A. RODRÍGUEZ</span>
+      <span className="font-display text-2xl">BRANDON A. RODRÍGUEZ</span>
       <nav aria-label={t('a11y.footerNav')}>
         <ul className="flex flex-wrap justify-center gap-6">
           {FOOTER_LINK_KEYS.map((item) => (
