@@ -1,2 +1,10 @@
 allowBuilds:
   msw: true
+minimumReleaseAge: 10080
+trustPolicy: no-downgrade
+# semver@6.3.1 predates provenance on the v6 line; @babel/core still resolves it.
+# Excluded after manual verification per https://pnpm.io/settings#trustpolicyexclude
+trustPolicyExclude:
+  - semver@6.3.1
+overrides:
+  semver: ^7.7.2
