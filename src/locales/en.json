@@ -11,6 +11,7 @@
     "languageSwitcher": "Select language",
     "profileAlt": "Brandon Alan Rodríguez Ramírez",
     "experienceTimeline": "Work experience timeline",
+    "githubGraph": "Contribution graph for the last year: {{total}} contributions, current streak {{current}} days, longest streak {{longest}} days.",
     "openMenu": "Open navigation menu",
     "closeMenu": "Close navigation menu"
   },
@@ -21,6 +22,7 @@
   "nav": {
     "projects": "PROJECTS",
     "skills": "SKILLS",
+    "github": "ACTIVITY",
     "experience": "EXPERIENCE",
     "education": "EDUCATION",
     "contact": "CONTACT ME",
@@ -36,9 +38,21 @@
   "sections": {
     "projects": "PROJECTS",
     "skills": "SKILLS",
+    "github": "GITHUB ACTIVITY",
     "experience": "EXPERIENCE",
     "education": "EDUCATION",
     "contact": "CONTACT ME"
+  },
+  "github": {
+    "totalLastYear": "CONTRIBUTIONS (LAST YEAR)",
+    "currentStreak": "CURRENT STREAK",
+    "longestStreak": "LONGEST STREAK",
+    "legendLess": "Less",
+    "legendMore": "More",
+    "viewProfile": "View GitHub profile",
+    "empty": "Contribution data is not available yet.",
+    "contributionCount": "{{count}} contributions",
+    "updated": "Data updated {{date}}"
   },
   "projects": {
     "ipally": {

@@ -15,6 +15,12 @@
   --surface: hsl(0 0% 4%);
   --surface-elevated: hsl(0 0% 8%);
   --input: hsl(0 0% 5%);
+  /* Heatmap levels (0 = empty, 4 = max) — accent-glow scale */
+  --heatmap-0: hsl(0 0% 4%);
+  --heatmap-1: hsl(199 100% 50% / 0.22);
+  --heatmap-2: hsl(199 100% 50% / 0.45);
+  --heatmap-3: hsl(199 100% 50% / 0.68);
+  --heatmap-4: hsl(199 100% 50% / 1);
 }
 
 @theme inline {
@@ -112,6 +118,77 @@
     animation: hero-typewriter-cursor 1.05s step-end infinite;
   }
 
+  .heatmap-cell {
+    width: 0.75rem;
+    height: 0.75rem;
+    border: 1px solid hsl(210 12% 28% / 0.35);
+    border-radius: 2px;
+    padding: 0;
+    flex-shrink: 0;
+    transition: box-shadow 0.15s ease, transform 0.15s ease;
+  }
+
+  .heatmap-cell[data-level='0'] {
+    background-color: var(--heatmap-0);
+  }
+
+  .heatmap-cell[data-level='1'] {
+    background-color: var(--heatmap-1);
+    border-color: hsl(199 100% 50% / 0.25);
+  }
+
+  .heatmap-cell[data-level='2'] {
+    background-color: var(--heatmap-2);
+    border-color: hsl(199 100% 50% / 0.4);
+  }
+
+  .heatmap-cell[data-level='3'] {
+    background-color: var(--heatmap-3);
+    border-color: hsl(199 100% 50% / 0.55);
+    box-shadow: 0 0 6px hsl(199 100% 50% / 0.2);
+  }
+
+  .heatmap-cell[data-level='4'] {
+    background-color: var(--heatmap-4);
+    border-color: hsl(199 100% 50% / 0.7);
+    box-shadow: 0 0 8px hsl(199 100% 50% / 0.35);
+  }
+
+  .heatmap-cell:hover,
+  .heatmap-cell:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 1px;
+    transform: scale(1.15);
+    z-index: 1;
+  }
+
+  .heatmap-legend-swatch {
+    width: 0.75rem;
+    height: 0.75rem;
+    border-radius: 2px;
+    border: 1px solid hsl(210 12% 28% / 0.35);
+  }
+
+  .heatmap-legend-swatch[data-level='0'] {
+    background-color: var(--heatmap-0);
+  }
+
+  .heatmap-legend-swatch[data-level='1'] {
+    background-color: var(--heatmap-1);
+  }
+
+  .heatmap-legend-swatch[data-level='2'] {
+    background-color: var(--heatmap-2);
+  }
+
+  .heatmap-legend-swatch[data-level='3'] {
+    background-color: var(--heatmap-3);
+  }
+
+  .heatmap-legend-swatch[data-level='4'] {
+    background-color: var(--heatmap-4);
+  }
+
   @keyframes hero-typewriter-cursor {
     0%,
     45% {
@@ -126,6 +203,15 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .heatmap-cell {
+    transition: none;
+  }
+
+  .heatmap-cell:hover,
+  .heatmap-cell:focus-visible {
+    transform: none;
+  }
+
   .hero-typewriter-cursor {
     display: none;
   }

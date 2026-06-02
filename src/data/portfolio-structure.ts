@@ -26,9 +26,15 @@ export const CONTACT = {
   linkedin: 'https://linkedin.com/in/brandon-alan-rodriguez/',
 } as const
 
+export const GITHUB = {
+  username: 'IngenieroAlan',
+  profileUrl: 'https://github.com/IngenieroAlan',
+} as const
+
 export const NAV_LINK_KEYS = [
   { href: '#missions', labelKey: 'nav.projects' },
   { href: '#systems', labelKey: 'nav.skills' },
+  { href: '#github-activity', labelKey: 'nav.github' },
   { href: '#experience', labelKey: 'nav.experience' },
   { href: '#education', labelKey: 'nav.education' },
   { href: '#transmissions', labelKey: 'nav.contact' },

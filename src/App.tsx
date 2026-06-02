@@ -2,6 +2,7 @@ import { useTranslation } from 'react-i18next'
 import { ContactSection } from '@/components/contact-section'
 import { EducationSection } from '@/components/education-section'
 import { ExperienceSection } from '@/components/experience-section'
+import { GitHubContributionsSection } from '@/components/github-contributions-section'
 import { HeroSection } from '@/components/hero-section'
 import { ParallaxStarfield } from '@/components/parallax-starfield'
 import { ProjectsSection } from '@/components/projects-section'
@@ -35,6 +36,7 @@ function App() {
         <HeroSection />
         <ProjectsSection />
         <SkillsSection />
+        <GitHubContributionsSection />
         <ExperienceSection />
         <EducationSection />
         <ContactSection />
