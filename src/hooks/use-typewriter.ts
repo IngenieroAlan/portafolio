@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react'
+import { useEffect, useState } from 'react'
 
 type UseTypewriterOptions = {
   segments: readonly string[]
@@ -30,20 +30,12 @@ export function useTypewriter({
   segmentPauseMs = 420,
 }: UseTypewriterOptions) {
   const prefersReducedMotion = usePrefersReducedMotion()
-  const fullText = useMemo(
-    () => (segments.length > 0 ? segments.join(separator) : ''),
-    [segments, separator],
-  )
+  const fullText = segments.length > 0 ? segments.join(separator) : ''
 
-  const [charIndex, setCharIndex] = useState(() =>
-    prefersReducedMotion ? fullText.length : 0,
-  )
+  const [charIndex, setCharIndex] = useState(0)
 
   useEffect(() => {
-    if (prefersReducedMotion) {
-      setCharIndex(fullText.length)
-      return
-    }
+    if (prefersReducedMotion) return
 
     if (charIndex >= fullText.length) return
 
@@ -59,12 +51,13 @@ export function useTypewriter({
     fullText,
     prefersReducedMotion,
     segmentPauseMs,
-    separator,
     typeSpeed,
   ])
 
-  const displayText = fullText.slice(0, charIndex)
-  const isComplete = charIndex >= fullText.length
+  const displayText = prefersReducedMotion
+    ? fullText
+    : fullText.slice(0, charIndex)
+  const isComplete = prefersReducedMotion || charIndex >= fullText.length
 
   return {
     displayText,

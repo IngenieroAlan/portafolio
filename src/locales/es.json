@@ -11,6 +11,7 @@
     "languageSwitcher": "Seleccionar idioma",
     "profileAlt": "Brandon Alan Rodríguez Ramírez",
     "experienceTimeline": "Línea de tiempo de experiencia laboral",
+    "githubGraph": "Gráfico de contribuciones del último año: {{total}} contribuciones, racha actual {{current}} días, racha más larga {{longest}} días.",
     "openMenu": "Abrir menú de navegación",
     "closeMenu": "Cerrar menú de navegación"
   },
@@ -21,6 +22,7 @@
   "nav": {
     "projects": "PROYECTOS",
     "skills": "HABILIDADES",
+    "github": "ACTIVIDAD",
     "experience": "EXPERIENCIA",
     "education": "EDUCACIÓN",
     "contact": "CONTÁCTAME",
@@ -36,9 +38,21 @@
   "sections": {
     "projects": "PROYECTOS",
     "skills": "HABILIDADES",
+    "github": "ACTIVIDAD EN GITHUB",
     "experience": "EXPERIENCIA",
     "education": "EDUCACIÓN",
     "contact": "CONTÁCTAME"
+  },
+  "github": {
+    "totalLastYear": "CONTRIBUCIONES (ÚLTIMO AÑO)",
+    "currentStreak": "RACHA ACTUAL",
+    "longestStreak": "RACHA MÁS LARGA",
+    "legendLess": "Menos",
+    "legendMore": "Más",
+    "viewProfile": "Ver perfil en GitHub",
+    "empty": "Los datos de contribuciones aún no están disponibles.",
+    "contributionCount": "{{count}} contribuciones",
+    "updated": "Datos actualizados {{date}}"
   },
   "projects": {
     "ipally": {
@@ -103,6 +117,10 @@
       "3.er lugar — Concurso de Prototipo de Software (Avanzado).",
       "Inglés B2 — Certificado EF SET."
     ]
+  },
+  "whatsapp": {
+    "ariaLabel": "Chatear por WhatsApp",
+    "prefillMessage": "¡Hola Brandon! Vi tu portafolio y me interesa contratar tus servicios como desarrollador para mi empresa. ¿Podemos platicar sobre cómo podrías integrarte a nuestro equipo o proyecto?"
   },
   "contact": {
     "linkedin": "LINKEDIN",

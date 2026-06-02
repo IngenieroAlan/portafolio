@@ -16,7 +16,7 @@ export function SiteHeader() {
           href="#hero"
           className="font-display text-2xl tracking-[-0.05em] text-accent focus-visible:outline-offset-4"
         >
-          B.A. RODRÍGUEZ
+          BRANDON A. RODRÍGUEZ
         </a>
         <nav aria-label={t('a11y.mainNav')} className="hidden md:block">
           <ul className="flex items-center gap-8">

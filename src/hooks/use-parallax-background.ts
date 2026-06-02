@@ -46,63 +46,12 @@ function bindParallaxScroll(
   }
 }
 
-const applyTransform: ParallaxApply = (background, offsetY) => {
-  background.style.transform = `translate3d(0, ${offsetY}px, 0)`
-}
-
-const resetTransform = (background: HTMLElement) => {
-  background.style.transform = ''
-}
-
 const applyBackgroundPosition: ParallaxApply = (background, offsetY) => {
   background.style.backgroundPosition = `0 ${offsetY}px`
 }
 
 const resetBackgroundPosition = (background: HTMLElement) => {
   background.style.backgroundPosition = '0 0'
-}
-
-/** Parallax tied to a section's scroll position. */
-export function useParallaxBackground(
-  sectionRef: RefObject<HTMLElement | null>,
-  backgroundRef: RefObject<HTMLElement | null>,
-  { speed = 0.35 }: ParallaxOptions = {},
-) {
-  useEffect(() => {
-    const section = sectionRef.current
-    const background = backgroundRef.current
-    if (!section || !background) return
-
-    return bindParallaxScroll(
-      background,
-      () => {
-        const { top } = section.getBoundingClientRect()
-        return Math.max(0, -top)
-      },
-      speed,
-      applyTransform,
-      resetTransform,
-    )
-  }, [sectionRef, backgroundRef, speed])
-}
-
-/** Parallax via transform (element must extend beyond the viewport). */
-export function useDocumentParallaxBackground(
-  backgroundRef: RefObject<HTMLElement | null>,
-  { speed = 0.4 }: ParallaxOptions = {},
-) {
-  useEffect(() => {
-    const background = backgroundRef.current
-    if (!background) return
-
-    return bindParallaxScroll(
-      background,
-      () => window.scrollY,
-      speed,
-      applyTransform,
-      resetTransform,
-    )
-  }, [backgroundRef, speed])
 }
 
 /**
