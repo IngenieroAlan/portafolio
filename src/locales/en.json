@@ -118,6 +118,10 @@
       "English B2 — EF SET Certified."
     ]
   },
+  "whatsapp": {
+    "ariaLabel": "Chat on WhatsApp",
+    "prefillMessage": "Hi Brandon! I saw your portfolio and I'm interested in hiring you as a developer for our company. Can we talk about how you could join our team or project?"
+  },
   "contact": {
     "linkedin": "LINKEDIN",
     "form": {

@@ -118,6 +118,10 @@
       "Inglés B2 — Certificado EF SET."
     ]
   },
+  "whatsapp": {
+    "ariaLabel": "Chatear por WhatsApp",
+    "prefillMessage": "¡Hola Brandon! Vi tu portafolio y me interesa contratar tus servicios como desarrollador para mi empresa. ¿Podemos platicar sobre cómo podrías integrarte a nuestro equipo o proyecto?"
+  },
   "contact": {
     "linkedin": "LINKEDIN",
     "form": {

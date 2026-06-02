@@ -9,6 +9,7 @@ import { ProjectsSection } from '@/components/projects-section'
 import { SiteFooter } from '@/components/site-footer'
 import { SiteHeader } from '@/components/site-header'
 import { SkillsSection } from '@/components/skills-section'
+import { WhatsAppFab } from '@/components/whatsapp-fab'
 
 function App() {
   const { t } = useTranslation()
@@ -43,6 +44,8 @@ function App() {
       </main>
 
       <SiteFooter />
+
+      <WhatsAppFab />
     </div>
   )
 }
