@@ -13,7 +13,19 @@ export function HeroSection() {
       aria-labelledby="hero-heading"
       data-node-id="2:7"
     >
-      <div className="hero-glass relative z-0 flex w-full max-w-2xl flex-col items-center gap-6 rounded-2xl px-6 py-10 text-center sm:px-12 sm:py-14">
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_72%_70%_at_50%_45%,transparent_32%,hsl(0_0%_4%/0.38)_74%,hsl(0_0%_3%/0.66)_100%)]"
+      />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_55%_45%_at_50%_42%,hsl(0_0%_100%/0.05),transparent_65%)]"
+      />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,hsl(205_100%_66%/0.10),transparent_60%)]"
+      />
+      <div className="hero-glass relative z-10 flex w-full max-w-2xl flex-col items-center gap-6 rounded-2xl px-6 py-10 text-center sm:px-12 sm:py-14">
         <div className="relative size-56 rounded-full border border-white/10 bg-[#131313]/80 p-2 shadow-[0_0_20px_rgba(0,163,255,0.25)]">
           <div className="relative size-full overflow-hidden rounded-full">
             <img
