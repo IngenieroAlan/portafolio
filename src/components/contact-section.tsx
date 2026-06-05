@@ -1,10 +1,49 @@
+import { useState } from 'react'
 import { Mail, Phone, Radio } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 import { SectionHeading } from '@/components/section-heading'
 import { CONTACT } from '@/data/portfolio-structure'
+import { ENV } from '@/lib/environment'
+
+type FormStatus = 'idle' | 'sending' | 'success' | 'error'
 
 export function ContactSection() {
   const { t } = useTranslation()
+  const [status, setStatus] = useState<FormStatus>('idle')
+
+  async function onSubmit(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault()
+    setStatus('sending')
+
+    const formData = new FormData(event.currentTarget)
+    formData.append('access_key', ENV.web3formsApiKey)
+
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: formData,
+      })
+
+      const data = (await response.json()) as { success?: boolean }
+      if (data.success) {
+        setStatus('success')
+        //event.currentTarget.reset()
+      } else {
+        setStatus('error')
+      }
+    } catch {
+      setStatus('error')
+    }
+  }
+
+  const statusMessage =
+    status === 'sending'
+      ? t('contact.form.sending')
+      : status === 'success'
+        ? t('contact.form.success')
+        : status === 'error'
+          ? t('contact.form.error')
+          : null
 
   return (
     <section
@@ -63,7 +102,7 @@ export function ContactSection() {
 
         <form
           className="flex flex-col gap-6"
-          onSubmit={(e) => e.preventDefault()}
+          onSubmit={onSubmit}
           noValidate
           aria-labelledby="transmissions-heading"
         >
@@ -77,12 +116,13 @@ export function ContactSection() {
               </label>
               <input
                 id="origin-name"
-                name="originName"
+                name="name"
                 type="text"
                 autoComplete="name"
                 required
+                disabled={status === 'sending'}
                 placeholder={t('contact.form.originNamePlaceholder')}
-                className="min-h-11 border border-border bg-input px-4 py-3 text-base uppercase text-foreground placeholder:text-muted-foreground/50"
+                className="min-h-11 border border-border bg-input px-4 py-3 text-base uppercase text-foreground placeholder:text-muted-foreground/50 disabled:opacity-50"
               />
             </div>
             <div className="flex flex-col gap-2">
@@ -94,12 +134,13 @@ export function ContactSection() {
               </label>
               <input
                 id="comms-channel"
-                name="commsChannel"
+                name="email"
                 type="email"
                 autoComplete="email"
                 required
+                disabled={status === 'sending'}
                 placeholder={t('contact.form.commsChannelPlaceholder')}
-                className="min-h-11 border border-border bg-input px-4 py-3 text-base uppercase text-foreground placeholder:text-muted-foreground/50"
+                className="min-h-11 border border-border bg-input px-4 py-3 text-base uppercase text-foreground placeholder:text-muted-foreground/50 disabled:opacity-50"
               />
             </div>
           </div>
@@ -112,19 +153,37 @@ export function ContactSection() {
             </label>
             <textarea
               id="signal-content"
-              name="signalContent"
+              name="message"
               rows={5}
               required
+              disabled={status === 'sending'}
               placeholder={t('contact.form.signalContentPlaceholder')}
-              className="min-h-32 resize-y border border-border bg-input px-4 py-3 text-base uppercase text-foreground placeholder:text-muted-foreground/50"
+              className="min-h-32 resize-y border border-border bg-input px-4 py-3 text-base uppercase text-foreground placeholder:text-muted-foreground/50 disabled:opacity-50"
             />
           </div>
           <button
             type="submit"
-            className="min-h-11 w-full border border-accent py-4 font-display text-2xl uppercase tracking-[0.2em] text-accent shadow-[0_0_15px_rgba(0,163,255,0.3)] transition-colors hover:bg-accent/10 focus-visible:outline-offset-4"
+            disabled={status === 'sending'}
+            className="min-h-11 w-full border border-accent py-4 font-display text-2xl uppercase tracking-[0.2em] text-accent shadow-[0_0_15px_rgba(0,163,255,0.3)] transition-colors hover:bg-accent/10 focus-visible:outline-offset-4 disabled:cursor-not-allowed disabled:opacity-50"
           >
-            {t('contact.form.submit')}
+            {status === 'sending'
+              ? t('contact.form.sending')
+              : t('contact.form.submit')}
           </button>
+          {statusMessage ? (
+            <p
+              aria-live="polite"
+              className={
+                status === 'success'
+                  ? 'text-center text-xs font-bold tracking-widest text-accent'
+                  : status === 'error'
+                    ? 'text-center text-xs font-bold tracking-widest text-destructive'
+                    : 'text-center text-xs font-bold tracking-widest text-muted-foreground'
+              }
+            >
+              {statusMessage}
+            </p>
+          ) : null}
         </form>
       </div>
     </section>

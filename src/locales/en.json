@@ -131,7 +131,10 @@
       "commsChannelPlaceholder": "YOUR EMAIL",
       "signalContent": "MESSAGE",
       "signalContentPlaceholder": "TYPE YOUR MESSAGE HERE...",
-      "submit": "SEND"
+      "submit": "SEND",
+      "sending": "SENDING...",
+      "success": "MESSAGE SENT",
+      "error": "FAILED TO SEND"
     }
   },
   "footer": {

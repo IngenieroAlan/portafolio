@@ -131,7 +131,10 @@
       "commsChannelPlaceholder": "TU CORREO ELECTRÓNICO",
       "signalContent": "MENSAJE",
       "signalContentPlaceholder": "ESCRIBE TU MENSAJE AQUÍ...",
-      "submit": "ENVIAR"
+      "submit": "ENVIAR",
+      "sending": "ENVIANDO...",
+      "success": "MENSAJE ENVIADO",
+      "error": "ERROR AL ENVIAR"
     }
   },
   "footer": {
