@@ -28,7 +28,8 @@
     "contact": "CONTÁCTAME",
     "archives": "ARCHIVOS",
     "contactShort": "CONTACTO",
-    "viewMore": "VER MÁS"
+    "viewMore": "VER MÁS",
+    "hireMe": "CONTRÁTAME"
   },
   "hero": {
     "title": "DESARROLLADOR FULL STACK",
@@ -134,7 +135,14 @@
       "submit": "ENVIAR",
       "sending": "ENVIANDO...",
       "success": "MENSAJE ENVIADO",
-      "error": "ERROR AL ENVIAR"
+      "error": "ERROR AL ENVIAR",
+      "hirePrefillMessage": "¡Hola Brandon! Vi tu portafolio y me interesa contratar tus servicios como desarrollador de software. Me gustaría conocer más sobre cómo podríamos trabajar juntos.",
+      "validation": {
+        "nameRequired": "EL NOMBRE ES OBLIGATORIO",
+        "emailRequired": "EL CORREO ES OBLIGATORIO",
+        "emailInvalid": "INGRESA UN CORREO VÁLIDO",
+        "messageRequired": "EL MENSAJE ES OBLIGATORIO"
+      }
     }
   },
   "footer": {

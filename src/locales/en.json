@@ -28,7 +28,8 @@
     "contact": "CONTACT ME",
     "archives": "ARCHIVES",
     "contactShort": "CONTACT",
-    "viewMore": "VIEW MORE"
+    "viewMore": "VIEW MORE",
+    "hireMe": "HIRE ME"
   },
   "hero": {
     "title": "FULL STACK DEVELOPER",
@@ -134,7 +135,14 @@
       "submit": "SEND",
       "sending": "SENDING...",
       "success": "MESSAGE SENT",
-      "error": "FAILED TO SEND"
+      "error": "FAILED TO SEND",
+      "hirePrefillMessage": "Hi Brandon! I saw your portfolio and I'm interested in hiring you as a software developer. I'd like to learn more about your services and how we could work together.",
+      "validation": {
+        "nameRequired": "NAME IS REQUIRED",
+        "emailRequired": "EMAIL IS REQUIRED",
+        "emailInvalid": "ENTER A VALID EMAIL",
+        "messageRequired": "MESSAGE IS REQUIRED"
+      }
     }
   },
   "footer": {

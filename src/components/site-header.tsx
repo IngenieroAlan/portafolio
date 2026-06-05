@@ -2,6 +2,10 @@ import { useTranslation } from 'react-i18next'
 import { LanguageSwitcher } from '@/components/language-switcher'
 import { MobileNavDrawer } from '@/components/mobile-nav-drawer'
 import { NAV_LINK_KEYS } from '@/data/portfolio-structure'
+import {
+  CONTACT_SECTION_HASH,
+  requestContactHirePrefill,
+} from '@/lib/contact-helpers'
 
 export function SiteHeader() {
   const { t } = useTranslation()
@@ -35,10 +39,11 @@ export function SiteHeader() {
         <div className="flex items-center gap-3">
           <LanguageSwitcher />
           <a
-            href="#missions"
+            href={CONTACT_SECTION_HASH}
+            onClick={requestContactHirePrefill}
             className="hidden min-h-6 min-w-24 items-center justify-center border border-foreground px-6 py-2 text-center text-xs font-bold tracking-[0.12em] text-foreground transition-colors hover:border-accent hover:text-accent focus-visible:outline-offset-4 md:inline-flex"
           >
-            {t('nav.viewMore')}
+            {t('nav.hireMe')}
           </a>
           <MobileNavDrawer />
         </div>

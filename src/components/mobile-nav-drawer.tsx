@@ -4,6 +4,10 @@ import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { LanguageSwitcher } from '@/components/language-switcher'
 import { NAV_LINK_KEYS } from '@/data/portfolio-structure'
+import {
+  CONTACT_SECTION_HASH,
+  requestContactHirePrefill,
+} from '@/lib/contact-helpers'
 import { cn } from '@/lib/utils'
 
 export function MobileNavDrawer() {
@@ -81,11 +85,14 @@ export function MobileNavDrawer() {
           </nav>
 
           <a
-            href="#missions"
-            onClick={closeDrawer}
+            href={CONTACT_SECTION_HASH}
+            onClick={() => {
+              requestContactHirePrefill()
+              closeDrawer()
+            }}
             className="inline-flex min-h-11 w-full items-center justify-center border border-foreground px-6 py-2 text-center text-xs font-bold tracking-[0.12em] text-foreground transition-colors hover:border-accent hover:text-accent focus-visible:outline-offset-4"
           >
-            {t('nav.viewMore')}
+            {t('nav.hireMe')}
           </a>
 
           <div className="mt-auto border-t border-border/40 pt-6">
