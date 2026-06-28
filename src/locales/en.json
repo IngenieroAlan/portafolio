@@ -29,6 +29,7 @@
     "archives": "ARCHIVES",
     "contactShort": "CONTACT",
     "viewMore": "VIEW MORE",
+    "viewLess": "VIEW LESS",
     "hireMe": "HIRE ME"
   },
   "hero": {
@@ -84,6 +85,26 @@
         "to build custom garments by combining fabrics, styles, and sizes."
       ],
       "tags": ["NEXT.JS", "E-COMMERCE", "WIZARD"]
+    },
+    "alWindowsApp": {
+      "title": "AL WINDOWS APP",
+      "description": [
+        "Enterprise mobile app for attendance and workforce management on construction sites.",
+        "On-site flow for checkers: QR scanning and manual logging of clock-ins, clock-outs, and meal breaks.",
+        "Admin panel with dashboard, shift history, incident calendar, leave requests, digitally signed minutes, site reassignment, overtime, and vacations.",
+        "Built with React Native, Expo, TypeScript, expo-router, Zustand, permission-based RBAC, and native integrations. Deployed with EAS Build."
+      ],
+      "tags": ["REACT NATIVE", "EXPO", "RBAC"]
+    },
+    "miTiendaUabcs": {
+      "title": "MI TIENDA UABCS",
+      "description": [
+        "University e-commerce platform where I performed maintenance by fixing component design issues.",
+        "Stripe payment fixes to ensure reliable checkout flows.",
+        "Implemented purchase status tracking for shipments in the admin dashboard.",
+        "Built a reports module to view inventory, orders, and other operational metrics."
+      ],
+      "tags": ["NEXT.JS", "STRIPE", "E-COMMERCE"]
     }
   },
   "experience": {
