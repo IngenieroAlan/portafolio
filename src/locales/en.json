@@ -95,6 +95,16 @@
         "Built with React Native, Expo, TypeScript, expo-router, Zustand, permission-based RBAC, and native integrations. Deployed with EAS Build."
       ],
       "tags": ["REACT NATIVE", "EXPO", "RBAC"]
+    },
+    "miTiendaUabcs": {
+      "title": "MI TIENDA UABCS",
+      "description": [
+        "University e-commerce platform where I performed maintenance by fixing component design issues.",
+        "Stripe payment fixes to ensure reliable checkout flows.",
+        "Implemented purchase status tracking for shipments in the admin dashboard.",
+        "Built a reports module to view inventory, orders, and other operational metrics."
+      ],
+      "tags": ["NEXT.JS", "STRIPE", "E-COMMERCE"]
     }
   },
   "experience": {

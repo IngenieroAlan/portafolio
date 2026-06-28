@@ -40,13 +40,18 @@ export const NAV_LINK_KEYS = [
   { href: '#transmissions', labelKey: 'nav.contact' },
 ] as const
 
-export type ProjectId = 'ipally' | 'rvco' | 'cucufate' | 'alWindowsApp'
+export type ProjectId =
+  | 'ipally'
+  | 'rvco'
+  | 'cucufate'
+  | 'alWindowsApp'
+  | 'miTiendaUabcs'
 
 export const PROJECTS_PREVIEW_LIMIT = 3
 
 export const PROJECTS_STRUCTURE: ReadonlyArray<{
   id: ProjectId
-  accent: 'green' | 'coral' | 'blue' | 'amber'
+  accent: 'green' | 'coral' | 'blue' | 'amber' | 'violet'
   image: string
   url?: string
 }> = [
@@ -70,6 +75,12 @@ export const PROJECTS_STRUCTURE: ReadonlyArray<{
     id: 'alWindowsApp',
     accent: 'amber',
     image: IMAGES.holocron,
+  },
+  {
+    id: 'miTiendaUabcs',
+    accent: 'violet',
+    image: IMAGES.rebel,
+    url: 'https://www.mitiendauabcs.com/',
   },
 ] as const
 
@@ -125,5 +136,11 @@ export const accentStyles = {
     border: 'border-[hsl(45_100%_55%)]',
     shadow: 'drop-shadow-[0_0_7.5px_rgba(255,200,0,0.2)]',
     tag: 'border-[hsl(45_100%_55%)] text-[hsl(45_100%_55%)]',
+  },
+  violet: {
+    title: 'text-[hsl(280_85%_65%)]',
+    border: 'border-[hsl(280_85%_65%)]',
+    shadow: 'drop-shadow-[0_0_7.5px_rgba(180,100,255,0.2)]',
+    tag: 'border-[hsl(280_85%_65%)] text-[hsl(280_85%_65%)]',
   },
 } as const

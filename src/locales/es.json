@@ -95,6 +95,16 @@
         "Arquitectura con React Native, Expo, TypeScript, expo-router, Zustand, RBAC e integraciones nativas. Despliegue con EAS Build."
       ],
       "tags": ["REACT NATIVE", "EXPO", "RBAC"]
+    },
+    "miTiendaUabcs": {
+      "title": "MI TIENDA UABCS",
+      "description": [
+        "E-commerce universitario donde realicé mantenimiento corrigiendo errores en el diseño de componentes.",
+        "Correcciones en el apartado de pagos con Stripe para asegurar flujos de checkout confiables.",
+        "En el dashboard de administradores implementé los estatus de compras para el seguimiento de envíos.",
+        "Creé el módulo de reportes para consultar inventario, pedidos y más métricas operativas."
+      ],
+      "tags": ["NEXT.JS", "STRIPE", "E-COMMERCE"]
     }
   },
   "experience": {
