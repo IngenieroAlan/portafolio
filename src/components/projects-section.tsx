@@ -1,12 +1,22 @@
 import { ArrowRight, Crosshair } from 'lucide-react'
+import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { SectionHeading } from '@/components/section-heading'
-import { accentStyles, PROJECTS_STRUCTURE } from '@/data/portfolio-structure'
+import {
+  accentStyles,
+  PROJECTS_PREVIEW_LIMIT,
+  PROJECTS_STRUCTURE,
+} from '@/data/portfolio-structure'
 import { getStringArray } from '@/lib/i18n-helpers'
 import { cn } from '@/lib/utils'
 
 export function ProjectsSection() {
   const { t } = useTranslation()
+  const [expanded, setExpanded] = useState(false)
+  const hasHiddenProjects = PROJECTS_STRUCTURE.length > PROJECTS_PREVIEW_LIMIT
+  const visibleProjects = expanded
+    ? PROJECTS_STRUCTURE
+    : PROJECTS_STRUCTURE.slice(0, PROJECTS_PREVIEW_LIMIT)
 
   return (
     <section
@@ -24,7 +34,7 @@ export function ProjectsSection() {
         </SectionHeading>
 
         <ul className="grid gap-8 md:grid-cols-3">
-          {PROJECTS_STRUCTURE.map((project) => {
+          {visibleProjects.map((project) => {
             const styles = accentStyles[project.accent]
             const title = t(`projects.${project.id}.title`)
             const description = getStringArray(
@@ -91,15 +101,25 @@ export function ProjectsSection() {
           })}
         </ul>
 
-        <div className="flex justify-center pt-4">
-          <a
-            href="#missions"
-            className="inline-flex min-h-11 min-w-44 items-center justify-center gap-2 border border-foreground px-8 py-4 font-display text-2xl uppercase tracking-wide text-foreground transition-colors hover:border-accent hover:text-accent focus-visible:outline-offset-4"
-          >
-            {t('nav.viewMore')}
-            <ArrowRight className="size-4 shrink-0" aria-hidden />
-          </a>
-        </div>
+        {hasHiddenProjects ? (
+          <div className="flex justify-center pt-4">
+            <button
+              type="button"
+              aria-expanded={expanded}
+              onClick={() => setExpanded((current) => !current)}
+              className="inline-flex min-h-11 min-w-44 items-center justify-center gap-2 border border-foreground px-8 py-4 font-display text-2xl uppercase tracking-wide text-foreground transition-colors hover:border-accent hover:text-accent focus-visible:outline-offset-4"
+            >
+              {t(expanded ? 'nav.viewLess' : 'nav.viewMore')}
+              <ArrowRight
+                className={cn(
+                  'size-4 shrink-0 transition-transform',
+                  expanded && 'rotate-90',
+                )}
+                aria-hidden
+              />
+            </button>
+          </div>
+        ) : null}
       </div>
     </section>
   )
