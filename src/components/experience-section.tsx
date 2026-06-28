@@ -40,10 +40,10 @@ export function ExperienceSection() {
               <li
                 key={item.id}
                 className={cn(
-                  'relative flex',
+                  'relative flex justify-center',
                   item.side === 'right'
-                    ? 'justify-end pl-0 md:pl-[58%]'
-                    : 'justify-start pr-0 md:pr-[58%]',
+                    ? 'md:justify-end md:pl-[58%]'
+                    : 'md:justify-start md:pr-[58%]',
                 )}
               >
                 <article className="w-full max-w-md border border-[#1a1a1a] bg-surface p-6">
@@ -65,7 +65,7 @@ export function ExperienceSection() {
                   </div>
                 </article>
                 <span
-                  className="absolute left-1/2 top-1/2 size-4 -translate-x-1/2 -translate-y-1/2 rounded-full bg-accent-glow shadow-[0_0_10px_#00a3ff,0_0_20px_#00a3ff]"
+                  className="absolute left-1/2 top-1/2 hidden size-4 -translate-x-1/2 -translate-y-1/2 rounded-full bg-accent-glow shadow-[0_0_10px_#00a3ff,0_0_20px_#00a3ff] md:block"
                   aria-hidden="true"
                 />
               </li>
